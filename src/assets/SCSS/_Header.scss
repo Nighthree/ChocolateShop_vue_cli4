@@ -1,0 +1,48 @@
+.logo {
+  width: 125px;
+  height: 60px;
+  background-image: url(https://raw.githubusercontent.com/Nighthree/ChocolateShop/master/src/assets/images/chocolate_logo.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 130%;
+}
+.nav-border {
+  border-bottom: 2px solid $Choco;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.carouselPSize {
+  font-size: 12px;
+}
+.headerBtn {
+  line-height: 40px;
+  padding: 0 10px;
+  height: 40px;
+  color: $Choco;
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+    color: $yellowChoco;
+  }
+}
+.headerBtn.active {
+  color: $yellowChoco;
+}
+
+.scrolltop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px $secondary;
+  background-color: $white;
+  color: $dark;
+  &:hover {
+    text-decoration: none;
+  }
+}

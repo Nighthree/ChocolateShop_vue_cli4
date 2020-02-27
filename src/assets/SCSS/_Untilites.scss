@@ -1,0 +1,23 @@
+.w120px {
+  width: 120px;
+}
+.w100px {
+  width: 100px;
+}
+.w80px {
+  width: 80px;
+}
+.bg-cover {
+  background-position: center center;
+  background-size: cover;
+}
+.bg-op6 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.minHeight {
+  min-height: calc(100vh - (62px + 145.6px + 48px));
+}
+.ulStyle {
+  list-style: none;
+  padding-inline-start: unset;
+}
