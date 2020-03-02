@@ -25,17 +25,17 @@
   font-weight: bold;
   &:hover {
     text-decoration: none;
-    color: $yellowChoco;
+    color: $ChocoNd;
   }
 }
 .headerBtn.active {
-  color: $yellowChoco;
+  color: $ChocoNd;
 }
 
 .scrolltop {
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 25px;
   width: 30px;
   height: 30px;
   border-radius: 50%;

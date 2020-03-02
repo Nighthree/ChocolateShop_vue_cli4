@@ -1,3 +1,6 @@
+body {
+  color: $dark;
+}
 .w120px {
   width: 120px;
 }
@@ -20,4 +23,57 @@
 .ulStyle {
   list-style: none;
   padding-inline-start: unset;
+}
+
+.chocoline {
+  position: relative;
+}
+.chocoline::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  width: 80px;
+  height: 5px;
+  border-top: 1px solid $ChocoRd;
+  border-bottom: 1px solid $ChocoRd;
+}
+.btn.btnChoco {
+  display: block;
+  padding: 10px 0;
+  background-color: $white;
+  color: $ChocoNd;
+  font-weight: bold;
+  border: 2px solid $ChocoNd;
+  transition: all 0.3s;
+  &:hover {
+    text-decoration: none;
+    border: 2px solid $Choco;
+    color: $Choco;
+  }
+  &:active {
+    background-color: $Choco;
+    color: $white;
+  }
+}
+
+.btnToPro {
+  display: block;
+  width: 224px;
+  padding: 10px 0;
+  background-color: $ChocoRd;
+  color: $Choco;
+  font-weight: bold;
+  transition: all 0.3s;
+  border: 2px solid $ChocoRd;
+  &:hover {
+    text-decoration: none;
+    background-color: $Choco;
+    color: $ChocoRd;
+    border: 2px solid $ChocoRd;
+  }
+  &:active {
+    background-color: $ChocoRd;
+    color: $Choco;
+    border: 2px solid $Choco;
+  }
 }
