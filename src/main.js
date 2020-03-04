@@ -9,8 +9,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
-// import VeeValidate from 'vee-validate';
-// import zhTwValidate from 'vee-validate/dist/locale/zh_TW';
+import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-validate';
+import TW from 'vee-validate/dist/locale/zh_TW.json';
+import { email } from 'vee-validate/dist/rules';
 
 import App from './App.vue'
 import router from './router'
@@ -22,10 +23,20 @@ Vue.use(VueAxios, axios);
 Vue.use(Vuex);
 Vue.use(VueAwesomeSwiper);
 
-Vue.component('Loading', Loading);
 Vue.filter('currency', currencyFilter);
-
 Vue.component('Loading', Loading);
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
+localize('zh_TW', TW);
+
+extend('email', email);
+
+extend('min', {
+  validate(value, args) {
+    return value.length >= args.length;
+  },
+  params: ['length']
+});
 
 new Vue({
   created() {

@@ -25,7 +25,7 @@
           <div class="col-12 col-md-6 text-center p-4">
             <img
               class="img-fluid rounded"
-              src="https://s3-ap-northeast-1.amazonaws.com/lacabosse.com.tw/wp-content/uploads/2018/11/OurSupplier1-570x570.jpg"
+              src="../../assets/images/home-1.jpg"
               alt
             />
           </div>
@@ -110,7 +110,7 @@
           <div class="col-md-6 col-12 d-flex align-items-center p-4">
             <img
               class="img-fluid rounded"
-              src="https://cw1.tw/CW/images/article/C1384830828642.jpg"
+              src="../../assets/images/home-2.jpg"
               alt
             />
           </div>
@@ -118,7 +118,7 @@
       </div>
     </section>
 
-    <section class="container" data-aos="fade-up">
+    <section class="container mb-5" data-aos="fade-up">
       <h3 class="h1 mb-4 font-weight-bold text-center">店長推薦</h3>
       <div class="row">
         <div class="col-md-4 col-12 mb-3" v-for="item in pushProducts" :key="item.id">
@@ -145,8 +145,8 @@
               <a
                 href="#"
                 title="加入購物車"
-                class="btn btn-outline-danger addCart p-2"
-                @click.stop.prevent="addCart(item.id, 1)"
+                class="btn btn-outline-danger  addOneToCart p-2"
+                @click.stop.prevent="addCart(item.id)"
               >
                 <i class="fas fa-spinner fa-spin fa-lg" v-if="addCartLoading === item.id"></i>
                 <i class="fas fa-cart-plus fa-lg" v-if="addCartLoading !== item.id"></i>
@@ -155,12 +155,6 @@
           </a>
         </div>
       </div>
-      <!-- <div class="d-flex justify-content-end pb-5 pt-3">
-        <router-link to="/products" class="btn btnChoco px-5">
-          其他精選巧克力
-          <i class="fas fa-arrow-right"></i>
-        </router-link>
-      </div>-->
     </section>
     <section class="position-relative" data-aos="fade-up">
       <img

@@ -53,6 +53,18 @@ export default new Vuex.Store({
         context.commit('LOADING', false);
         alert('購物車新增成功');
       });
+    },
+    delCart(context, id) {
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart/${id}`;
+      context.commit('LOADING', true);
+      axios.delete(api).then(response => {
+        context.dispatch('getCart');
+        context.commit('LOADING', false);
+        alert('購物車商品刪除成功');
+      });
+    },
+    pushLoadingStatu(context, payload) {
+      context.commit('LOADING', payload);
     }
   },
   mutations: {
@@ -78,7 +90,5 @@ export default new Vuex.Store({
     GET_ADDCARTLOADING(state, payload) {
       state.status.addCartLoading = payload;
     }
-  },
-  modules: {
   }
 })

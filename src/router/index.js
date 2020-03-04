@@ -22,6 +22,41 @@ const routes = [
         path: 'news',
         name: 'News',
         component: () => import('../components/User/News.vue')
+      },
+      {
+        path: 'about',
+        name: 'About',
+        component: () => import('../components/User/About.vue')
+      },
+      {
+        path: 'products',
+        name: 'Products',
+        component: () => import('../components/User/Products.vue')
+      },
+      {
+        path: '/product/:productId',
+        name: 'Product',
+        component: () => import('../components/User/Product.vue')
+      },
+      {
+        path: 'know',
+        name: 'Know',
+        component: () => import('../components/User/Know.vue')
+      },
+      {
+        path: 'coupon',
+        name: 'Coupon',
+        component: () => import('../components/User/Coupon.vue')
+      },
+      {
+        path: 'order',
+        name: 'Order',
+        component: () => import('../components/User/Order.vue')
+      },
+      {
+        path: 'checkout/:orderId',
+        name: 'Checkout',
+        component: () => import('../components/User/Checkout.vue')
       }
     ]
   }

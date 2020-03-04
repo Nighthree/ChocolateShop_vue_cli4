@@ -18,7 +18,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 .minHeight {
-  min-height: calc(100vh - (62px + 145.6px + 48px));
+  min-height: calc(100vh - (78px + 148.8px));
 }
 .ulStyle {
   list-style: none;
@@ -34,24 +34,24 @@ body {
   top: -20px;
   width: 80px;
   height: 5px;
-  border-top: 1px solid $ChocoRd;
-  border-bottom: 1px solid $ChocoRd;
+  border-top: 1px solid $ChocoNd;
+  border-bottom: 1px solid $ChocoNd;
 }
 .btn.btnChoco {
   display: block;
   padding: 10px 0;
   background-color: $white;
-  color: $ChocoNd;
+  color: $Choco;
   font-weight: bold;
-  border: 2px solid $ChocoNd;
+  border: 2px solid $Choco;
   transition: all 0.3s;
   &:hover {
     text-decoration: none;
-    border: 2px solid $Choco;
-    color: $Choco;
+    border: 2px solid $ChocoNd;
+    color: $ChocoNd;
   }
   &:active {
-    background-color: $Choco;
+    background-color: $ChocoNd;
     color: $white;
   }
 }

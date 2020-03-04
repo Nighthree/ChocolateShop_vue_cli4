@@ -1,52 +1,49 @@
 .productList {
-  border: 2px solid $Choco;
-  box-shadow: 2px 2px $ChocoNd;
   margin-bottom: 5px;
   position: relative;
   left: 0;
   transition: all 0.3s;
-  &:hover {
-    box-shadow: 2px 2px transparent;
-  }
   a {
+    box-shadow: 2px 2px 5px $secondary;
+    border: 1px solid $Choco;
     color: $Choco;
     font-weight: 900;
     transition: all 0.3s;
     &:hover {
       background-color: $Choco;
-      color: $ChocoNd;
+      color: $ChocoRd;
     }
     &:active {
       color: $Choco;
-      background-color: $ChocoNd;
+      background-color: $ChocoRd;
+      border: 1px solid $ChocoRd;
     }
   }
 }
 .productList.active {
   left: 15px;
-  border: 2px solid $ChocoNd;
-  box-shadow: 2px 2px transparent;
   a {
-    color: $Choco;
-    background-color: $ChocoNd;
+    box-shadow: transparent;
+    color: $ChocoRd;
+    background-color: $Choco;
     transition: all 0.3s;
   }
   &:before {
     width: 0;
     height: 0;
     border-top: 6.5px solid transparent;
-    border-left: 13px solid $ChocoNd;
+    border-left: 13px solid $Choco;
     border-bottom: 6.5px solid transparent;
     content: "";
     position: absolute;
-    top: 10.9px;
+    top: 14.5px;
     left: -15px;
   }
 }
 .cardList {
-  border: 1px solid $ChocoNd;
   box-shadow: 2px 2px 5px $secondary;
   border-radius: 10px;
+  border: none;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -86,7 +83,7 @@
   }
 }
 
-.addCart {
+.addOneToCart {
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -97,18 +94,17 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-}
-.fa-cart-plus{
-  &:before{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    position: absolute;
+  .fa-cart-plus {
+    &:before {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
   }
 }
 
-.badgeCategory{
+.badgeCategory {
   background-color: #6c757d8f;
   color: $white;
 }
-
