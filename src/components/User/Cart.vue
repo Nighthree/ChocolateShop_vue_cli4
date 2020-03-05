@@ -20,6 +20,7 @@
       >
         <div v-if="cart.total == 0">
           <p class="text-center py-3 mb-0">購物車還空空的喔！</p>
+          <router-link to="/products" class="btn btnChoco d-block" v-if="cart.total === 0">立刻選購</router-link>
         </div>
         <div v-if="cart.total !== 0">
           <h6 style="font-size: 12px;">已選擇商品</h6>
@@ -52,7 +53,7 @@
             </tfoot>
           </table>
         </div>
-        <router-link to="/Order" class="btn btnChoco d-block" v-if="cart.total !== 0">結帳去</router-link>
+        <router-link to="/order" class="btn btnChoco d-block" v-if="cart.total !== 0">結帳去</router-link>
       </div>
     </div>
   </div>

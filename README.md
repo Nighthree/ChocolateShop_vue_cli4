@@ -1,4 +1,38 @@
-# chocolate_vue
+# 巧克力電商 ChocolateShop [Demo](https://nighthree.github.io/ChocolateShop_vue_cli4/#/home)  
+
+> 這是一份以 Vue.js 為框架的前端練習作品，無任何商業用途
+
+> A Vue.js project
+
+> Only used in Portfolio
+
+從 [GitHub 連結](https://github.com/Nighthree/ChocolateShop) 移植
+專案的套件及插件更新為較新的版本，並調整部分畫面及用色。
+
+Skills | 使用技術
+-----------
+<ul>
+<li>Vue CLI 3</li>
+<li>Vue Router</li>
+<li>Vuex</li>
+<li>Webpack</li>
+<li>API</li>
+<li>JavaScript (ES6)</li>
+<li>SASS/SCSS</li>
+<li>Bootstrap 4</li>
+<li>RWD</li>
+<li>jQuery</li>
+<li>CSS</li>
+<li>HTML</li>
+</ul>
+
+Plugins | 使用插件
+-----------
+<ul>
+<li>[vue-axios](https://www.npmjs.com/package/vue-axios) </li>
+<li>[vue-loading-overlay](https://www.npmjs.com/package/vue-loading-overlay)</li>
+<li>[vee-validate](https://logaretm.github.io/vee-validate/)</li>
+</ul>
 
 ## Project setup
 ```

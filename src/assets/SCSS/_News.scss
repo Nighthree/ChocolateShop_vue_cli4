@@ -1,6 +1,11 @@
 .newsCard {
+  border: none;
+  box-shadow: 1px 1px 5px $secondary;
   &:hover{
     text-decoration: none;
-    box-shadow: 1px 1px 5px $secondary;
+    box-shadow: 3px 3px 5px $secondary;
   }
+}
+.newsImg{
+  height: 350px;
 }

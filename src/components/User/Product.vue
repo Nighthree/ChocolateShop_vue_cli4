@@ -13,6 +13,11 @@
             <h6 class="text-secondary proInfo mb-3">產品介紹</h6>
             <p class="pl-4 mb-3">{{ product.description }}</p>
             <p class="text-secondary text-right mb-3">－ {{ product.content }}</p>
+            <h6 class="text-secondary proInfo mb-3">購物須知</h6>
+            <div class="">
+              <p class="pl-4 mb-3">線上訂購須於三天前下訂，依照訂購流程可選擇到貨日期，會依照您指定的到貨日期及時間配送唷！</p>
+              <p class="pl-4 mb-3">賞味期限：冷藏5天內食用完畢(不可冷凍)</p>
+            </div>
             <p v-if="product.origin_price == product.price">原價 {{product.origin_price}} 元</p>
             <p class="h5 text-right mb-3" v-if="product.price !== product.origin_price">
               優惠價
@@ -23,7 +28,11 @@
               <select name id="productNum" v-model="num" class="px-3 py-1 mb-0 productInput">
                 <option class :value="num" v-for="num in 10" :key="num">{{ num }}</option>
               </select>
-              <a href="#" class="btn btnPro" @click.prevent="addCart(product.id, num)">
+              <a
+                href="#"
+                class="btn btn-outline-danger align-self-center"
+                @click.prevent="addCart(product.id, num)"
+              >
                 <i class="fas fa-spinner fa-spin fa-lg" v-if="addCartLoading == product.id"></i>
                 <i class="fas fa-cart-plus fa-lg" v-if="addCartLoading !== product.id"></i>
                 加入購物車
@@ -66,7 +75,12 @@
                 class="h6 font-weight-bold text-danger text-center"
                 v-if="item.price"
               >{{ item.price | currency }} 元</div>
-              <a href="#" title="加入購物車" class="btn btn-outline-danger addOneToCart " @click.stop.prevent="addCart(item.id)">
+              <a
+                href="#"
+                title="加入購物車"
+                class="btn btn-outline-danger addOneToCart"
+                @click.stop.prevent="addCart(item.id)"
+              >
                 <i class="fas fa-spinner fa-spin fa-lg" v-if="addCartLoading === item.id"></i>
                 <i class="fas fa-cart-plus fa-lg" v-if="addCartLoading !== item.id"></i>
               </a>
@@ -121,7 +135,7 @@ export default {
     },
     filterProduct() {
       const vm = this;
-      const filterPro = vm.products.filter(function(item) {
+      const filterPro = vm.products.filter(item => {
         return item.category === vm.product.category;
       });
       const filterProTitle = [];

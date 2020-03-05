@@ -1,10 +1,14 @@
 <template>
   <div>
+    <Cart></Cart>
     <section class="container py-5 textStyle">
       <div class="row justify-content-center">
         <div class="col-md-9 col-12 mb-4" data-aos="fade-up">
           <router-link class="card newsCard" to="/coupon">
-            <img src="../../assets/images/888.jpg" class="card-img-top" alt />
+            <div
+              class="newsImg card-img-top bg-cover"
+              style="background-image: url(https://raw.githubusercontent.com/Nighthree/ChocolateShop_vue_cli4/master/src/assets/images/888.jpg)"
+            ></div>
             <div class="card-body">
               <p class="text-secondary">
                 日期：
@@ -24,11 +28,10 @@
             target="_blank"
             href="https://www.shoppingdesign.com.tw/post/view/4826"
           >
-            <img
-              src="https://bnextmedia.s3.hicloud.net.tw/image/album/2019-11/img-1574330638-63274@900.jpg"
-              class="card-img-top"
-              alt
-            />
+            <div
+              class="newsImg card-img-top bg-cover"
+              style="background-image: url(https://bnextmedia.s3.hicloud.net.tw/image/album/2019-11/img-1574330638-63274@900.jpg)"
+            ></div>
             <div class="card-body">
               <p class="text-secondary">
                 日期：
@@ -50,11 +53,10 @@
             target="_blank"
             href="https://www.natgeomedia.com/environment/article/content-5244.html"
           >
-            <img
-              src="https://www.natgeomedia.com/wp-content/uploads/2018/11/02-chocolate-domestication-south-america.adapt_.1190.1.jpg"
-              class="card-img-top"
-              alt
-            />
+            <div
+              class="newsImg card-img-top bg-cover"
+              style="background-image: url(https://www.natgeomedia.com/wp-content/uploads/2018/11/02-chocolate-domestication-south-america.adapt_.1190.1.jpg)"
+            ></div>
             <div class="card-body">
               <p class="text-secondary">
                 日期：
@@ -71,3 +73,13 @@
     </section>
   </div>
 </template>
+
+<script>
+import Cart from "./Cart";
+
+export default {
+  components: {
+    Cart
+  }
+};
+</script>

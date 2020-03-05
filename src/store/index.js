@@ -55,7 +55,7 @@ export default new Vuex.Store({
       });
     },
     delCart(context, id) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart/${id}`;
+      const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/cart/${id}`;
       context.commit('LOADING', true);
       axios.delete(api).then(response => {
         context.dispatch('getCart');
@@ -76,7 +76,7 @@ export default new Vuex.Store({
     },
     GET_CATEGORIES(state, payload) {
       const categoryItem = [];
-      payload.forEach(function (item) {
+      payload.forEach(item => {
         categoryItem.push(item.category);
       });
       state.status.categories = Array.from(new Set(categoryItem));

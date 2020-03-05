@@ -1,19 +1,22 @@
 <template>
   <div>
+    <Cart></Cart>
     <section class="minHeight">
-      <div class="row justify-content-center">
-        <div
-          class="col-md-10 col-12 position-relative d-flex flex-column justify-content-center align-items-center my-5"
-        >
-          <img class="img-fluid" src="../../assets/images/888.jpg" alt />
-          <div class="d-flex justify-content-center py-3 py-md-0">
-            <a
-              href="#"
-              class="btn btnChoco btnCou px-5"
-              data-toggle="modal"
-              data-target="#couponModalCenter"
-              @click.prevent="couponCheck = '' , couponText =''"
-            >我要參加！</a>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div
+            class="col-md-10 col-12 position-relative d-flex flex-column justify-content-center align-items-center my-5"
+          >
+            <img class="img-fluid" src="../../assets/images/888.jpg" alt />
+            <div class="d-flex justify-content-center py-3 py-md-0">
+              <a
+                href="#"
+                class="btn btnChoco btnCou px-5"
+                data-toggle="modal"
+                data-target="#couponModalCenter"
+                @click.prevent="couponCheck = '' , couponText =''"
+              >我要參加！</a>
+            </div>
           </div>
         </div>
       </div>
@@ -79,6 +82,8 @@
 </template>
 
 <script>
+import Cart from "./Cart";
+
 export default {
   data() {
     return {
@@ -86,6 +91,9 @@ export default {
       couponCheck: "",
       couponCode: "888"
     };
+  },
+  components: {
+    Cart
   }
 };
 </script>
