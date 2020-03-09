@@ -13,9 +13,9 @@
           </a>
         </li>
         <li class="list-group-item border-0 h4 bg-Choco">
-          <a href="#" class="text-white">
-            <i class="fab fa-twitter-square"></i>
-          </a>
+          <router-link to="/login" title="登入後台" class="text-white">
+            <i class="fas fa-user-cog"></i>
+          </router-link>
         </li>
       </ul>
       <p class="text-center text-white">© Copright 2020 僅為作品無任何商業用途</p>
