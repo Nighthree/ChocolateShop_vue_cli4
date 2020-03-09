@@ -3,7 +3,7 @@
     <loading :active.sync="isLoading"></loading>
     <div class="text-right my-4">
       <button class="btn btn-primary" @click.prevent="getCoupon" title="如果沒有資料請點選重新讀取">取得優惠券資訊</button>
-      <button class="btn btn-primary" @click.prevent="openCouponModal(true)">建立新的優惠券</button>
+      <button class="btn btn-primary ml-3" @click.prevent="openCouponModal(true)">建立新的優惠券</button>
     </div>
 
     <div class="table-responsive">
@@ -44,7 +44,6 @@
     <Pagination :pagenation="paginations" @changeCurrPage="getCoupon"></Pagination>
 
     <!-- 新增&編輯優惠券的Modal -->
-
     <div
       class="modal fade"
       id="updataCoupon"

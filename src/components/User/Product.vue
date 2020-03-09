@@ -14,7 +14,10 @@
             <p class="pl-4 mb-3">{{ product.description }}</p>
             <p class="text-secondary text-right mb-3">－ {{ product.content }}</p>
             <div :class="{ 'open' : knowBuy }">
-              <h6 class="text-secondary proInfo mb-3 d-flex justify-content-between" @click="knowBuy = !knowBuy">
+              <h6
+                class="text-secondary proInfo mb-3 d-flex justify-content-between"
+                @click="knowBuy = !knowBuy"
+              >
                 <span>購物須知</span>
                 <i class="fas fa-chevron-down arrow mr-4"></i>
               </h6>
@@ -47,12 +50,13 @@
         </div>
       </div>
     </div>
-    <div class="container mb-3">
+
+    <div class="container pb-5">
       <div class="d-flex border-bottom mb-3">
         <h6 class="text-Choco similarPro mb-0">同系列商品</h6>
       </div>
-
-      <div class="row">
+      <!-- 處理商品量不足時 swpier 複製商品的情況，因為沒必要複製 -->
+      <div class="row" :class="[{ judgeRow : filterProduct.length < 4 },{ closeRow : filterProduct.length >= 4 }]">
         <div
           class="col-md-4 col-sm-6 col-12 mb-3"
           data-aos="fade-up"
@@ -93,7 +97,54 @@
           </router-link>
         </div>
       </div>
-      <div class="d-flex justify-content-end">
+      <div data-aos="fade-up" data-aos-once="true" :class="{ judgeSwiper : filterProduct.length < 4 }">
+        <div class="swiper-container productSwiper">
+          <div class="swiper-wrapper">
+            <swiper :options="swiperOption1" ref="mySwiper" v-if="products.length > 0">
+              <swiper-slide class="p-2" v-for="item in filterProduct" :key="item.id">
+                <router-link :to="{path: `/product/${item.id}`}" class="card cardList">
+                  <div
+                    class="bg-cover cardImgHeight"
+                    :style="{backgroundImage: `url(${ item.imageUrl })`}"
+                  >
+                    <div class="glass d-flex justify-content-center">
+                      <span>點擊查看更多</span>
+                    </div>
+                  </div>
+                  <div class="card-body p-2 position-relative pb-4">
+                    <p class="mb-2 badge badge-secondary">{{ item.category }}</p>
+                    <h6
+                      class="card-title font-weight-bold text-dark mb-1 text-center"
+                    >{{ item.title }}</h6>
+                    <div
+                      class="h6 font-weight-bold text-danger text-center"
+                      v-if="!item.price"
+                    >{{ item.origin_price | currency }} 元</div>
+                    <div
+                      class="h6 font-weight-bold text-danger text-center"
+                      v-if="item.price"
+                    >{{ item.price | currency }} 元</div>
+                    <a
+                      href="#"
+                      title="加入購物車"
+                      class="btn btn-outline-danger addOneToCart"
+                      @click.stop.prevent="addCart(item.id)"
+                    >
+                      <i class="fas fa-spinner fa-spin fa-lg" v-if="addCartLoading === item.id"></i>
+                      <i class="fas fa-cart-plus fa-lg" v-if="addCartLoading !== item.id"></i>
+                    </a>
+                  </div>
+                </router-link>
+              </swiper-slide>
+            </swiper>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center pt-3 productSwiper d-block d-lg-none">
+          <div class="swiper-pagination mx-1" slot="pagination"></div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end pt-5">
         <router-link to="/products" class="toProducts font-weight-bold">
           <i class="fas fa-arrow-left"></i> 回到商品列表
         </router-link>
@@ -111,7 +162,36 @@ export default {
       productId: "",
       product: {},
       num: "1",
-      knowBuy: false
+      knowBuy: false,
+      swiperOption1: {
+        initialSlide: 0,
+        direction: "horizontal",
+        speed: 800,
+        grabCursor: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: true,
+        interval: 3500,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          type: "bullets"
+        },
+        breakpoints: {
+          544: {
+            slidesPerView: 1
+          },
+          767: {
+            slidesPerView: 2,
+            centeredSlides: false
+          },
+          991: {
+            slidesPerView: 3,
+            centeredSlides: false
+          }
+        }
+      }
     };
   },
   methods: {
@@ -158,10 +238,6 @@ export default {
       const vm = this;
       if (newUrl.params.productId !== oldUrl.params.productId) {
         vm.getProduct(newUrl.params.productId);
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
       }
     }
   },

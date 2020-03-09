@@ -16,7 +16,7 @@
           class="page-item"
           v-for="page in pagenation.total_pages"
           :key="page"
-          :class="[{ 'active' : pagenation.current_page == page}]"
+          :class="[{ 'active' : pagenation.current_page === page}]"
         >
           <a class="page-link" href="#" @click.prevent="pageComponent(page)">{{ page }}</a>
         </li>

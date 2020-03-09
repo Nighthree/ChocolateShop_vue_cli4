@@ -1,0 +1,10 @@
+.productSwiper .swiper-container{
+    width: 100%;
+}
+.productSwiper .swiper-pagination-bullet-active{
+  background: $Choco;
+}
+.productSwiper .swiper-pagination-bullet{
+  margin-left: 3px;
+  margin-right: 3px;
+}

@@ -286,7 +286,6 @@ export default {
         httpMethod = "put";
       }
       vm.$http[httpMethod](api, { data: vm.temProduct }).then(response => {
-        console.log(api, httpMethod, vm.temProduct, response.data);
         if (response.data.success) {
           vm.$bus.$emit("message:push", vm.modalTitle + "成功", "success");
           vm.getProducts();

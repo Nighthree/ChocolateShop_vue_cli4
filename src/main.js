@@ -30,6 +30,8 @@ Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
 localize('zh_TW', TW);
 
+axios.defaults.withCredentials = true;
+
 extend('email', email);
 
 extend('min', {

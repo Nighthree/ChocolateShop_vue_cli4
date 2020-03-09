@@ -52,7 +52,6 @@ export default {
       const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/admin/orders?page=${page}`;
       vm.$store.dispatch("pushLoadingStatu", true);
       vm.$http.get(api).then(response => {
-        console.log(response.data);
         if (response.data.success) {
           vm.orders = response.data.orders;
           vm.paginations = response.data.pagination;
