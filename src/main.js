@@ -13,9 +13,10 @@ import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-va
 import TW from 'vee-validate/dist/locale/zh_TW.json';
 import { email } from 'vee-validate/dist/rules';
 
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import App from './App.vue';
+import router from './router';
+import './bus';
+import store from './store';
 import currencyFilter from './filter/currency';
 
 Vue.config.productionTip = false
@@ -49,3 +50,20 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    const api = `${process.env.VUE_APP_API_PATH}/api/user/check`;
+    axios.post(api).then((response) => {
+      if (response.data.success) {
+        next();
+      } else {
+        next({
+          path: '/login'
+        });
+      }
+    });
+  } else {
+    next();
+  }
+});

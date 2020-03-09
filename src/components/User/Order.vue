@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading :active.sync="isLoading"></loading>
     <div v-if="cart.total == 0" class="minHeight d-flex justify-content-center align-items-center">
       <router-link
         to="/products"
@@ -16,10 +17,16 @@
       <div class="container pt-5">
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-10 col-12">
-            <ul class="row ulStyle justify-content-md-around mb-0">
-              <li class="col-md-3 col-12 checkStep active text-center mb-3 mb-md-0">1.填寫訂購資料</li>
-              <li class="col-md-3 col-12 checkStep text-center mb-3 mb-md-0">2.金流付款</li>
-              <li class="col-md-3 col-12 checkStep text-center mb-3 mb-md-0">3.完成！</li>
+            <ul class="form-row ulStyle justify-content-md-around mb-0">
+              <li class="col-md-4 col-12 mb-3">
+                <span class="checkStep d-block text-center">1.填寫訂購資料</span>
+              </li>
+              <li class="col-md-4 col-12 mb-3">
+                <span class="checkStep d-block text-center">2.金流付款</span>
+              </li>
+              <li class="col-md-4 col-12 mb-3">
+                <span class="checkStep d-block text-center">3.完成！</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -99,7 +106,7 @@
                 <img src="../../assets/images/chocolate_icon.png" style="height:30px" />優惠碼
               </h2>
               <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="couponCode" />
-              <a class="btn checkCoupon my-3 d-block" @click.prevent="checkCouponCode">確認優惠碼</a>
+              <a class="btn checkCoupon my-3 d-block" @click.prevent="checkCouponCode">使用優惠碼</a>
               <router-link
                 to="/coupon"
                 class="d-block toProducts rounded mb-3 text-center"

@@ -4,12 +4,12 @@
     <Cart></Cart>
     <section class="bg-lightChoco mb-5">
       <div class="container py-5" data-aos="fade-up">
-        <h4 class="h1 pb-4 font-weight-bold text-center">為什麼要選擇我們的巧克力？</h4>
+        <h4 class="h1 pb-4 font-weight-bold text-center">好吃的秘訣</h4>
         <div class="row">
           <div class="col-md-4 text-center">
             <img
               class="mb-3"
-              src="https://s3-ap-northeast-1.amazonaws.com/lacabosse.com.tw/wp-content/uploads/2019/03/handmade4.png"
+              src="../../assets/images/handmade4.png"
               alt
             />
             <h6 class="h5">手工製作</h6>
@@ -24,7 +24,7 @@
           <div class="col-md-4 text-center">
             <img
               class="mb-3"
-              src="https://s3-ap-northeast-1.amazonaws.com/lacabosse.com.tw/wp-content/uploads/2019/03/cold-shipping.png"
+              src="../../assets/images/cold-shipping.png"
               alt
             />
             <h6 class="h5">冷藏運送</h6>
@@ -39,7 +39,7 @@
           <div class="col-md-4 text-center">
             <img
               class="mb-3"
-              src="https://s3-ap-northeast-1.amazonaws.com/lacabosse.com.tw/wp-content/uploads/2019/03/Premium-quality1.png"
+              src="../../assets/images/Premium-quality1.png"
               alt
             />
             <h6 class="h5">優良品質</h6>
@@ -55,19 +55,17 @@
     </section>
     <section class="container pb-5" data-aos="fade-up">
       <div class="row">
-        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <article>
+        <div class="col-12 col-md-6 d-flex justify-content-center flex-column py-4">
             <h4 class="h1 mb-3 font-weight-bold text-center">我們的任務</h4>
-            <p class="text-secondary">
+            <p class="text-secondary text-center">
               在這個巧克力大國裡
               <br />為您尋找最美味的巧克力
               <br />甚至新奇有趣的巧克力
               <br />只想帶給您不一樣的感官享受
             </p>
-            <div class="d-flex justify-content-center pb-5 pt-3">
+            <div class="d-flex justify-content-center">
               <router-link to="/about" class="btn btnChoco px-5">最新消息</router-link>
             </div>
-          </article>
         </div>
 
         <div class="col-12 col-md-6 text-center p-4">

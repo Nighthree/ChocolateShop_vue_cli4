@@ -13,17 +13,22 @@
             <h6 class="text-secondary proInfo mb-3">產品介紹</h6>
             <p class="pl-4 mb-3">{{ product.description }}</p>
             <p class="text-secondary text-right mb-3">－ {{ product.content }}</p>
-            <h6 class="text-secondary proInfo mb-3">購物須知</h6>
-            <div class="">
-              <p class="pl-4 mb-3">線上訂購須於三天前下訂，依照訂購流程可選擇到貨日期，會依照您指定的到貨日期及時間配送唷！</p>
-              <p class="pl-4 mb-3">賞味期限：冷藏5天內食用完畢(不可冷凍)</p>
+            <div :class="{ 'open' : knowBuy }">
+              <h6 class="text-secondary proInfo mb-3 d-flex justify-content-between" @click="knowBuy = !knowBuy">
+                <span>購物須知</span>
+                <i class="fas fa-chevron-down arrow mr-4"></i>
+              </h6>
+              <div class="buyKnow text-secondary">
+                <p class="pl-4 mb-3">線上訂購須於三天前下訂，依照訂購流程可選擇到貨日期，會依照您指定的到貨日期及時間配送唷！</p>
+                <p class="pl-4 mb-3">賞味期限：冷藏5天內食用完畢(不可冷凍)</p>
+              </div>
             </div>
             <p v-if="product.origin_price == product.price">原價 {{product.origin_price}} 元</p>
             <p class="h5 text-right mb-3" v-if="product.price !== product.origin_price">
               優惠價
               <span class="text-danger font-weight-bold">{{ product.price }}</span> 元
             </p>
-            <div class="d-flex justify-content-end mt-auto inputDiv">
+            <div class="d-flex justify-content-end inputDiv">
               <label for="productNum" class="proInputText mb-0 text-secondary">數量：</label>
               <select name id="productNum" v-model="num" class="px-3 py-1 mb-0 productInput">
                 <option class :value="num" v-for="num in 10" :key="num">{{ num }}</option>
@@ -105,7 +110,8 @@ export default {
     return {
       productId: "",
       product: {},
-      num: "1"
+      num: "1",
+      knowBuy: false
     };
   },
   methods: {

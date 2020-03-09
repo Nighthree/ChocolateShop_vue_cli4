@@ -70,3 +70,21 @@
     text-align: center;
   }
 }
+.buyKnow {
+  display: none;
+  overflow: hidden;
+  transition: all 0.3s;
+  height: 0;
+}
+.open .buyKnow {
+  display: block;
+  height: auto;
+}
+
+.arrow {
+  transform: 0;
+  transition: all 0.3s;
+}
+.open .arrow {
+  transform: rotateX(180deg);
+}

@@ -2,7 +2,7 @@
   <div>
     <Cart></Cart>
     <section class="container py-5 textStyle">
-      <h1 class="text-Choco text-center font-weight-bold pb-4">巧克力對身體的益處</h1>
+      <h1 class="text-Choco text-center font-weight-bold pb-4">吃巧克力的好處</h1>
       <div class="row py-4" data-aos="fade-up">
         <div class="col-md-6 col-12">
           <h3 class="text-Choco chocoline mb-4">提升認知能力</h3>

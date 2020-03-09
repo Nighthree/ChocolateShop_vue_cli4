@@ -59,6 +59,36 @@ const routes = [
         component: () => import('../components/User/Checkout.vue')
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/backstage',
+    name: 'Backstage',
+    component: () => import('../views/Backstage.vue'),
+    children: [
+      {
+        path: 'productlist',
+        name: 'ProductList',
+        component: () => import('../components/Backstage/ProductList.vue'),
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'orderlist',
+        name: 'OrderList',
+        component: () => import('../components/Backstage/OrderList.vue'),
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'couponlist',
+        name: 'CouponList',
+        component: () => import('../components/Backstage/CouponList.vue'),
+        meta: { requiresAuth: true }
+      }
+    ]
   }
 ]
 

@@ -3,17 +3,27 @@
     <loading :active.sync="isLoading"></loading>
     <div class="minHeight">
       <section class="container mt-5">
-        <ul class="row ulStyle justify-content-md-around">
-          <li class="col-md-3 col-12 checkStep text-center mb-3">1.填寫訂購資料</li>
-          <li
-            class="col-md-3 col-12 checkStep text-center mb-3"
-            :class="{active :order.is_paid == false}"
-          >2.金流付款</li>
-          <li
-            class="col-md-3 col-12 checkStep text-center mb-3"
-            :class="{active :order.is_paid == true}"
-          >3.完成！</li>
-        </ul>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10 col-12">
+            <ul class="form-row ulStyle justify-content-md-around">
+              <li class="col-md-4 col-12 mb-3">
+                <span class="checkStep d-block text-center">1.填寫訂購資料</span>
+              </li>
+              <li class="col-md-4 col-12 mb-3">
+                <span
+                  class="checkStep d-block text-center"
+                  :class="{active :order.is_paid === false}"
+                >2.金流付款</span>
+              </li>
+              <li class="col-md-4 col-12 mb-3">
+                <span
+                  class="checkStep d-block text-center"
+                  :class="{active :order.is_paid === true}"
+                >3.完成！</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class="container">
