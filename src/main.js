@@ -15,7 +15,6 @@ import { email } from 'vee-validate/dist/rules';
 
 import App from './App.vue';
 import router from './router';
-import './bus';
 import store from './store';
 import currencyFilter from './filter/currency';
 
