@@ -287,11 +287,17 @@ export default {
       }
       vm.$http[httpMethod](api, { data: vm.temProduct }).then(response => {
         if (response.data.success) {
-          vm.$bus.$emit("message:push", vm.modalTitle + "成功", "success");
+          vm.$store.dispatch("updateMessage", {
+            message: vm.modalTitle + "成功",
+            status: "success"
+          });
           vm.getProducts();
           $("#productModal").modal("hide");
         } else {
-          vm.$bus.$emit("message:push", response.data.message, "danger");
+          vm.$store.dispatch("updateMessage", {
+            message: response.data.message,
+            status: "danger"
+          });
           vm.getProducts();
           $("#productModal").modal("hide");
         }
@@ -307,9 +313,15 @@ export default {
       const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/admin/product/${vm.temProduct.id}`;
       vm.$http.delete(api).then(response => {
         if (response.data.success) {
-          vm.$bus.$emit("message:push", "刪除產品成功", "success");
+          vm.$store.dispatch("updateMessage", {
+            message: "刪除產品成功",
+            status: "success"
+          });
         } else {
-          vm.$bus.$emit("message:push", response.data.message, "danger");
+          vm.$store.dispatch("updateMessage", {
+            message: response.data.message,
+            status: "danger"
+          });
         }
         vm.getProducts();
         $("#delProductModal").modal("hide");
@@ -332,10 +344,16 @@ export default {
           if (response.data.success) {
             vm.$set(vm.temProduct, "imageUrl", response.data.imageUrl);
             vm.$store.dispatch("pushLoadingStatu", false);
-            vm.$bus.$emit("message:push", "圖片上傳成功", "success");
+            vm.$store.dispatch("updateMessage", {
+              message: "圖片上傳成功",
+              status: "success"
+            });
           } else {
             vm.$store.dispatch("pushLoadingStatu", false);
-            vm.$bus.$emit("message:push", response.data.message, "danger");
+            vm.$store.dispatch("updateMessage", {
+              message: response.data.message,
+              status: "danger"
+            });
           }
         });
     }

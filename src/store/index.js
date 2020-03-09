@@ -16,7 +16,8 @@ export default new Vuex.Store({
     },
     cart: {
       carts: []
-    }
+    },
+    messages: []
   },
   actions: {
     getProducts(context, page) {
@@ -39,6 +40,20 @@ export default new Vuex.Store({
         context.commit('LOADING', false);
       });
     },
+    // Alert
+    updateMessage(context, { message, status }) {
+      const timestamp = Math.floor(new Date() / 1000);
+      context.commit('MESSAGES', { message, status, timestamp });
+      context.dispatch('removeMessageWithTiming', timestamp);
+    },
+    removeMessageWithTiming(context, timestamp) {
+      setTimeout(() => {
+        context.commit('REMOVEMESSAGEWITHTIMIMG', timestamp);
+      }, 5000);
+    },
+    removeMessage(context, num) {
+      context.commit('REMOVEMESSAGE', num);
+    },
     addCart(context, { id, qty }) {
       const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/cart`;
       context.commit('GET_ADDCARTLOADING', id);
@@ -51,7 +66,7 @@ export default new Vuex.Store({
         context.dispatch('getCart');
         context.commit('GET_ADDCARTLOADING', '');
         context.commit('LOADING', false);
-        alert('購物車新增成功');
+        context.dispatch('updateMessage', { message: '購物車新增成功', status: 'success' });
       });
     },
     delCart(context, id) {
@@ -60,7 +75,7 @@ export default new Vuex.Store({
       axios.delete(api).then(response => {
         context.dispatch('getCart');
         context.commit('LOADING', false);
-        alert('購物車商品刪除成功');
+        context.dispatch('updateMessage', { message: '商品刪除成功', status: 'danger' });
       });
     },
     pushLoadingStatu(context, payload) {
@@ -89,6 +104,24 @@ export default new Vuex.Store({
     },
     GET_ADDCARTLOADING(state, payload) {
       state.status.addCartLoading = payload;
+    },
+    // Alert
+    MESSAGES(state, { message, status, timestamp }) {
+      state.messages.push({
+        message,
+        status,
+        timestamp
+      });
+    },
+    REMOVEMESSAGEWITHTIMIMG(state, timestamp) {
+      state.messages.forEach((item, i) => {
+        if (item.timestamp === timestamp) {
+          state.messages.splice(i, 1);
+        }
+      });
+    },
+    REMOVEMESSAGE(state, num) {
+      state.messages.splice(num, 1);
     }
   }
 })

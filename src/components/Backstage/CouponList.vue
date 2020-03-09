@@ -197,11 +197,17 @@ export default {
       }
       vm.$http[httpMethod](api, { data: vm.coupon }).then(response => {
         if (response.data.success) {
-          vm.$bus.$emit("message:push", vm.modalTitle + "成功", "success");
+          vm.$store.dispatch("updateMessage", {
+            message: vm.modalTitle + "成功",
+            status: "success"
+          });
           vm.getCoupon();
           $("#updataCoupon").modal("hide");
         } else {
-          vm.$bus.$emit("message:push", response.data.message, "danger");
+          vm.$store.dispatch("updateMessage", {
+            message: response.data.message,
+            status: "danger"
+          });
           vm.getCoupon();
           $("#updataCoupon").modal("hide");
         }
@@ -212,9 +218,15 @@ export default {
       const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/admin/coupon/${vm.coupon.id}`;
       vm.$http.delete(api).then(response => {
         if (response.data.success) {
-          vm.$bus.$emit("message:push", "刪除優惠券成功", "success");
+          vm.$store.dispatch("updateMessage", {
+            message: "刪除優惠券成功",
+            status: "success"
+          });
         } else {
-          vm.$bus.$emit("message:push", response.data.message, "danger");
+          vm.$store.dispatch("updateMessage", {
+            message: response.data.message,
+            status: "danger"
+          });
         }
         $("#deleteCouponModal").modal("hide");
         vm.getCoupon();

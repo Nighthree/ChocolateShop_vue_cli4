@@ -277,6 +277,7 @@ export default {
           vm.$http.spread(function(delResp, addResp) {
             vm.$store.dispatch("getCart");
             vm.$store.dispatch("pushLoadingStatu", false);
+            vm.$store.dispatch('updateMessage', { message: '購物車變更成功', status: 'success' });
           })
         );
     },
@@ -287,7 +288,7 @@ export default {
         if (response.data.success) {
           vm.$router.push(`/checkout/${response.data.orderId}`);
         } else {
-          alert("訂單建立失敗");
+          vm.$store.dispatch('updateMessage', { message: '訂單建立失敗', status: 'danger' });
         }
         vm.getCart();
       });
