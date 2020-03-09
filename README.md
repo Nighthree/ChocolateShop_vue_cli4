@@ -6,8 +6,9 @@
 
 > Only used in Portfolio
 
-從 [GitHub 連結](https://github.com/Nighthree/ChocolateShop) 移植
-專案的套件及插件更新為較新的版本，並調整部分畫面及用色。
+從 [GitHub](https://github.com/Nighthree/ChocolateShop) 移植，
+主要從 Vue Cli 2 升級為 Vue Cli 4 ，
+以及其他套件及插件更新為較新的版本，並調整部分畫面及用色。
 
 Skills | 使用技術
 -----------
