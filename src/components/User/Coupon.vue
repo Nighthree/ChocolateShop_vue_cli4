@@ -40,8 +40,7 @@
           </div>
           <div class="modal-body" v-if="couponCheck === ''">
             <label class="h2 text-center d-block" for="couponText">
-              輸入「
-              <span class="font-weight-bold text-Choco">最愛巧克力</span>」
+              輸入「<span class="font-weight-bold text-Choco">最愛巧克力</span>」
               <br />兌換優惠碼
             </label>
             <input type="text" v-model="couponText" id="couponText" class="couponText" />
@@ -59,8 +58,7 @@
             <label class="text-center h5 d-block" for="couponTextAgain">
               兌換失敗！
               <br />再輸入一次吧！
-              <br />「
-              <span class="font-weight-bold text-Choco">最愛巧克力</span>」
+              <br />「<span class="font-weight-bold text-Choco">最愛巧克力</span>」
             </label>
             <input type="text" v-model="couponText" id="couponTextAgain" class="couponText" />
           </div>

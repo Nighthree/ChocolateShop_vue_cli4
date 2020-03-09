@@ -5,7 +5,6 @@
   z-index: 1000;
 }
 .btnCart {
-  color: $Choco;
   width: 60px;
   height: 60px;
   box-shadow: 1px 1px 5px $secondary;
@@ -14,10 +13,16 @@
   text-align: center;
   background-color: $white;
   transition: all 0.3s;
+  cursor: pointer;
+  .fa-shopping-cart {
+    color: $Choco;
+  }
   &:hover {
-    color: $white;
     background-color: $Choco;
     text-decoration: none;
+    .fa-shopping-cart {
+      color: $white;
+    }
   }
   .badge {
     position: absolute;
