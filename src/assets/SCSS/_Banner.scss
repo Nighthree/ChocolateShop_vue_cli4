@@ -1,14 +1,8 @@
 .bannerHeight {
   height: 65vh;
 }
-// .goProducts {
-//   position: absolute;
-//   background-color: rgba($color: #fff, $alpha: 0.3);
-//   width: 100%;
-//   height: 100%;
-//   transition: all 0.3s;
-//   &:hover {
-//     text-decoration: none;
-//     background-color: rgba($color: #fff, $alpha: 0.4);
-//   }
-// }
+.choco .carousel-caption{
+  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
