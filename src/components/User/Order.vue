@@ -19,7 +19,7 @@
           <div class="col-lg-8 col-md-10 col-12">
             <ul class="form-row ulStyle justify-content-md-around mb-0">
               <li class="col-md-4 col-12 mb-3">
-                <span class="checkStep d-block text-center">1.填寫訂購資料</span>
+                <span class="checkStep d-block text-center active">1.填寫訂購資料</span>
               </li>
               <li class="col-md-4 col-12 mb-3">
                 <span class="checkStep d-block text-center">2.金流付款</span>
