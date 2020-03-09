@@ -13,7 +13,7 @@
 Skills | 使用技術
 -----------
 <ul>
-<li>Vue CLI 3</li>
+<li>Vue CLI 4</li>
 <li>Vue Router</li>
 <li>Vuex</li>
 <li>Webpack</li>
@@ -25,14 +25,6 @@ Skills | 使用技術
 <li>jQuery</li>
 <li>CSS</li>
 <li>HTML</li>
-</ul>
-
-Plugins | 使用插件
------------
-<ul>
-<li>[vue-axios](https://www.npmjs.com/package/vue-axios) </li>
-<li>[vue-loading-overlay](https://www.npmjs.com/package/vue-loading-overlay)</li>
-<li>[vee-validate](https://logaretm.github.io/vee-validate/)</li>
 </ul>
 
 ## Project setup

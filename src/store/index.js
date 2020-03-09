@@ -72,7 +72,7 @@ export default new Vuex.Store({
       state.status.isLoading = statu;
     },
     GET_PRODUCTS(state, payload) {
-      state.products = payload.reverse();
+      state.products = payload;
     },
     GET_CATEGORIES(state, payload) {
       const categoryItem = [];
