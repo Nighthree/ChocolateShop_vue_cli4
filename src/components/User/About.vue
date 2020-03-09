@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Cart></Cart>
     <section class="container py-5 textStyle" data-aos="fade-up">
       <h1 class="mb-5 text-Choco">我們的故事</h1>
       <h5 class="text-secondary chocoline">我們是誰？</h5>
@@ -86,13 +85,3 @@
     </section>
   </div>
 </template>
-
-<script>
-import Cart from "./Cart";
-
-export default {
-  components: {
-    Cart
-  }
-};
-</script>

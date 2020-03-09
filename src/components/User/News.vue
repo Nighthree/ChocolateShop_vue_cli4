@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Cart></Cart>
     <section class="container py-5 textStyle">
       <div class="row justify-content-center">
         <div class="col-md-9 col-12 mb-4" data-aos="fade-up">
@@ -73,13 +72,3 @@
     </section>
   </div>
 </template>
-
-<script>
-import Cart from "./Cart";
-
-export default {
-  components: {
-    Cart
-  }
-};
-</script>

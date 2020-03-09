@@ -1,7 +1,6 @@
 <template>
   <div>
     <Banner></Banner>
-    <Cart></Cart>
     <section class="bg-lightChoco mb-5">
       <div class="container py-5" data-aos="fade-up">
         <h4 class="h1 pb-4 font-weight-bold text-center">好吃的秘訣</h4>
@@ -149,7 +148,6 @@
 
 <script>
 import Banner from "@/components/User/Banner.vue";
-import Cart from "@/components/User/Cart.vue";
 
 export default {
   methods: {
@@ -180,8 +178,7 @@ export default {
     }
   },
   components: {
-    Banner,
-    Cart
+    Banner
   },
   created() {
     this.getProducts();

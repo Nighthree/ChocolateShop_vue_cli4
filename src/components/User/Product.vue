@@ -1,7 +1,6 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading>
-    <Cart></Cart>
     <div class="container minHeight py-4 pt-md-5 mb-5">
       <div class="row" data-aos="fade-up">
         <div class="col-md-6 col-12 mb-3">
@@ -161,8 +160,6 @@
 </template>
 
 <script>
-import Cart from "./Cart";
-
 export default {
   data() {
     return {
@@ -247,9 +244,6 @@ export default {
         vm.getProduct(newUrl.params.productId);
       }
     }
-  },
-  components: {
-    Cart
   },
   created() {
     const vm = this;

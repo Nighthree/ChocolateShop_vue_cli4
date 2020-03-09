@@ -1,7 +1,6 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading>
-    <Cart></Cart>
     <div class="minHeight">
       <div class="container py-4 pt-md-5 mb-5">
         <div class="row">
@@ -80,8 +79,6 @@
 </template>
 
 <script>
-import Cart from "./Cart";
-
 export default {
   data() {
     return {
@@ -132,9 +129,6 @@ export default {
   created() {
     this.$store.dispatch("getSearchText", "All");
     this.getProducts();
-  },
-  components: {
-    Cart
   }
 };
 </script>

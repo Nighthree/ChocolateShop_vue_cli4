@@ -26,27 +26,27 @@
           </li>
           <li class="nav-item">
             <router-link to="/about" class="nav-link headerBtn text-center">
-            關於我們
-            <span class="sr-only">(current)</span>
-          </router-link>
+              關於我們
+              <span class="sr-only">(current)</span>
+            </router-link>
           </li>
           <li class="nav-item">
             <router-link to="/products" class="nav-link headerBtn text-center">
-            商品列表
-            <span class="sr-only">(current)</span>
-          </router-link>
+              商品列表
+              <span class="sr-only">(current)</span>
+            </router-link>
           </li>
           <li class="nav-item">
             <router-link to="/know" class="nav-link headerBtn text-center">
-            吃巧克力的好處
-            <span class="sr-only">(current)</span>
-          </router-link>
+              吃巧克力的好處
+              <span class="sr-only">(current)</span>
+            </router-link>
           </li>
           <li class="nav-item">
             <router-link to="/coupon" class="nav-link headerBtn text-center">
-            開幕慶活動
-            <span class="sr-only">(current)</span>
-          </router-link>
+              開幕慶活動
+              <span class="sr-only">(current)</span>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -70,9 +70,6 @@ export default {
         behavior: "smooth"
       });
     }
-  },
-  created() {
-    this.scrollTop();
   }
 };
 </script>
