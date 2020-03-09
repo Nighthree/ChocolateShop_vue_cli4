@@ -4,4 +4,19 @@
 .bannerLink{
   display: block;
   height: 100%;
+  position: relative;
 }
+.banner .swiper-pagination-bullet-active{
+  background: $Choco;
+}
+.bannerInfo{
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top:50%;
+  color: rgba($color: $white, $alpha: 0.8);
+  text-shadow: 0 0 10px $dark;
+  text-align: center;
+  font-weight: bold;
+}
+

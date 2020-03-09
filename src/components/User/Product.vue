@@ -56,7 +56,10 @@
         <h6 class="text-Choco similarPro mb-0">同系列商品</h6>
       </div>
       <!-- 處理商品量不足時 swpier 複製商品的情況，因為沒必要複製 -->
-      <div class="row" :class="[{ judgeRow : filterProduct.length < 4 },{ closeRow : filterProduct.length >= 4 }]">
+      <div
+        class="row"
+        :class="[{ judgeRow : filterProduct.length < 4 },{ closeRow : filterProduct.length >= 4 }]"
+      >
         <div
           class="col-md-4 col-sm-6 col-12 mb-3"
           data-aos="fade-up"
@@ -97,7 +100,11 @@
           </router-link>
         </div>
       </div>
-      <div data-aos="fade-up" data-aos-once="true" :class="{ judgeSwiper : filterProduct.length < 4 }">
+      <div
+        data-aos="fade-up"
+        data-aos-once="true"
+        :class="{ judgeSwiper : filterProduct.length < 4 }"
+      >
         <div class="swiper-container productSwiper">
           <div class="swiper-wrapper">
             <swiper :options="swiperOption1" ref="mySwiper" v-if="products.length > 0">
