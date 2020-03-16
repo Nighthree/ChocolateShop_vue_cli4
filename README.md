@@ -11,9 +11,9 @@
 以及其他套件及插件更新為較新的版本，並調整部分畫面及用色。
 
 ## Skills | 使用技術
------------
+
 Vue CLI 4、Vue Router、Vuex、Webpack、API、JavaScript (ES6)、SASS/SCSS、Bootstrap 4、RWD、jQuery、CSS、HTML
 
 ## Plugins | 使用插件
------------
+
 [vue-axios](https://www.npmjs.com/package/vue-axios)、[vue-loading-overlay](https://www.npmjs.com/package/vue-loading-overlay)、[vee-validate](https://logaretm.github.io/vee-validate/)、[vue-awesome-swiper](https://github.surmon.me/vue-awesome-swiper/)、[AOS](https://michalsnik.github.io/aos/)
