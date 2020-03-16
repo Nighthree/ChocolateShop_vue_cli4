@@ -6,46 +6,14 @@
 
 > Only used in Portfolio
 
-從 [GitHub](https://github.com/Nighthree/ChocolateShop) 移植，
+從[此 GitHub](https://github.com/Nighthree/ChocolateShop) 移植，
 主要從 Vue Cli 2 升級為 Vue Cli 4 ，
 以及其他套件及插件更新為較新的版本，並調整部分畫面及用色。
 
-Skills | 使用技術
+## Skills | 使用技術
 -----------
-<ul>
-<li>Vue CLI 4</li>
-<li>Vue Router</li>
-<li>Vuex</li>
-<li>Webpack</li>
-<li>API</li>
-<li>JavaScript (ES6)</li>
-<li>SASS/SCSS</li>
-<li>Bootstrap 4</li>
-<li>RWD</li>
-<li>jQuery</li>
-<li>CSS</li>
-<li>HTML</li>
-</ul>
+Vue CLI 4、Vue Router、Vuex、Webpack、API、JavaScript (ES6)、SASS/SCSS、Bootstrap 4、RWD、jQuery、CSS、HTML
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Plugins | 使用插件
+-----------
+[vue-axios](https://www.npmjs.com/package/vue-axios)、[vue-loading-overlay](https://www.npmjs.com/package/vue-loading-overlay)、[vee-validate](https://logaretm.github.io/vee-validate/)、[vue-awesome-swiper](https://github.surmon.me/vue-awesome-swiper/)、[AOS](https://michalsnik.github.io/aos/)
