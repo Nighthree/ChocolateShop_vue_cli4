@@ -50,19 +50,13 @@
   .glass {
     transition: all 0.3s;
     background-color: rgba(0, 0, 0, 0);
-    height: 200px;
-    @media (min-width: 768px) {
-      height: 150px;
-    }
+    height: 250px;
     span {
       color: transparent;
       transition: all 0.3s;
-      line-height: 200px;
+      line-height: 250px;
       font-size: 20px;
       font-weight: bold;
-      @media (min-width: 768px) {
-        line-height: 150px;
-      }
     }
   }
   &:hover {
@@ -77,10 +71,7 @@
 }
 
 .cardImgHeight {
-  height: 200px;
-  @media (min-width: 768px) {
-    height: 150px;
-  }
+  height: 250px;
 }
 
 .addOneToCart {

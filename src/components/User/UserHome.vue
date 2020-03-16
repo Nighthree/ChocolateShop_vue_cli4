@@ -39,7 +39,8 @@
         </div>
       </div>
     </section>
-    <section class="container pb-5">
+
+    <section class="container">
       <h4 class="h1 pb-4 font-weight-bold text-center text-Choco" data-aos="fade-up">好吃的秘訣</h4>
       <div class="row" data-aos="fade-up">
         <div class="col-md-4 text-center">
@@ -77,6 +78,8 @@
       </div>
     </section>
 
+    <Coupon data-aos="fade-up"></Coupon>
+
     <section class="position-relative" data-aos="fade-up">
       <img
         class="img-fluid homeFooterImg"
@@ -94,6 +97,7 @@
 
 <script>
 import Banner from "@/components/User/Banner.vue";
+import Coupon from "@/components/User/Coupon.vue";
 
 export default {
   methods: {
@@ -124,7 +128,8 @@ export default {
     }
   },
   components: {
-    Banner
+    Banner,
+    Coupon
   },
   created() {
     this.getProducts();
