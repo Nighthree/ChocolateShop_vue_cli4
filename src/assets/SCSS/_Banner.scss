@@ -1,5 +1,5 @@
 .bannerHeight {
-  height: 65vh;
+  height: calc(100vh - 80px);
 }
 .bannerLink{
   display: block;
@@ -14,9 +14,16 @@
   left: 15%;
   right: 15%;
   top:50%;
-  color: rgba($color: $white, $alpha: 0.8);
+  transform: translateY(-50%);
+  color: rgba($color: $white, $alpha: 1);
   text-shadow: 0 0 10px $dark;
   text-align: center;
-  font-weight: bold;
+  // font-weight: bold;
+  background-color: rgba($color: #020202, $alpha: 0.6);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  p{
+    font-size: 14px;
+  }
 }
 

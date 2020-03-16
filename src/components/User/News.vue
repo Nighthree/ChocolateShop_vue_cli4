@@ -29,7 +29,7 @@
           >
             <div
               class="newsImg card-img-top bg-cover"
-              style="background-image: url(https://bnextmedia.s3.hicloud.net.tw/image/album/2019-11/img-1574330638-63274@900.jpg)"
+              style="background-image: url(https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/201911/5DD51E91F3FFE1574248081.jpeg)"
             ></div>
             <div class="card-body">
               <p class="text-secondary">

@@ -57,7 +57,7 @@
         <div class="col-12 col-md-6 d-flex justify-content-center flex-column py-4">
             <h4 class="h1 mb-3 font-weight-bold text-center">我們的任務</h4>
             <p class="text-secondary text-center">
-              在這個巧克力大國裡
+              在這個巧克力的世界
               <br />為您尋找最美味的巧克力
               <br />甚至新奇有趣的巧克力
               <br />只想帶給您不一樣的感官享受
