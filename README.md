@@ -12,7 +12,8 @@
 
 ## Skills | 使用技術
 
-Vue CLI 4、Vue Router、Vuex、Webpack、API、JavaScript (ES6)、SASS/SCSS、Bootstrap 4、RWD、jQuery、CSS、HTML
+Vue CLI 4、Vue Router、Vuex、Webpack、API、
+JavaScript (ES6)、SASS/SCSS、Bootstrap 4、RWD、jQuery、CSS、HTML
 
 ## Plugins | 使用插件
 

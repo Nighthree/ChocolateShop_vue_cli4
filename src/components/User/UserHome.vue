@@ -1,101 +1,9 @@
 <template>
   <div>
     <Banner></Banner>
-    <section class="bg-lightChoco mb-5">
-      <div class="container py-5" data-aos="fade-up">
-        <h4 class="h1 pb-4 font-weight-bold text-center">好吃的秘訣</h4>
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <img
-              class="mb-3"
-              src="../../assets/images/handmade4.png"
-              alt
-            />
-            <h6 class="h5">手工製作</h6>
-            <p class="text-secondary">
-              官方認證手工產品
-              <br />每一個步驟都用愛心和細心
-              <br />不做機器大量生產
-              <br />每一顆巧克力都是用手小心呵護
-            </p>
-          </div>
-
-          <div class="col-md-4 text-center">
-            <img
-              class="mb-3"
-              src="../../assets/images/cold-shipping.png"
-              alt
-            />
-            <h6 class="h5">冷藏運送</h6>
-            <p class="text-secondary">
-              從製造巧克力的溫控工作室
-              <br />比利時到台灣的低溫空運
-              <br />進而到台灣倉儲的15度C溫控倉儲
-              <br />全程幫您保鮮到家
-            </p>
-          </div>
-
-          <div class="col-md-4 text-center">
-            <img
-              class="mb-3"
-              src="../../assets/images/Premium-quality1.png"
-              alt
-            />
-            <h6 class="h5">優良品質</h6>
-            <p class="text-secondary">
-              從可可樹到巧克力豆
-              <br />到烘培 發酵 研磨的製程
-              <br />親自監度製作
-              <br />符合最嚴格的章程
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="container pb-5" data-aos="fade-up">
-      <div class="row">
-        <div class="col-12 col-md-6 d-flex justify-content-center flex-column py-4">
-            <h4 class="h1 mb-3 font-weight-bold text-center">我們的任務</h4>
-            <p class="text-secondary text-center">
-              在這個巧克力的世界
-              <br />為您尋找最美味的巧克力
-              <br />甚至新奇有趣的巧克力
-              <br />只想帶給您不一樣的感官享受
-            </p>
-            <div class="d-flex justify-content-center">
-              <router-link to="/about" class="btn btnChoco px-5">最新消息</router-link>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 text-center p-4">
-          <img class="img-fluid rounded" src="../../assets/images/home-1.jpg" alt />
-        </div>
-      </div>
-    </section>
-
-    <section class="container-fluid bg-lightChoco" data-aos="fade-up">
-      <div class="container py-4">
-        <div class="row flex-row flex-md-row-reverse">
-          <div class="col-md-6 col-12 d-flex flex-column justify-content-between pt-4">
-            <h4 class="h1 mb-3 font-weight-bold text-center">吃巧克力的好處</h4>
-            <p class="text-secondary textStyle">你知道每天吃適量的黑巧克力(約28克)已被證實可以改善許多常見的慢性健康問題嗎？</p>
-            <p
-              class="text-secondary textStyle"
-            >黑巧克力含有益健康的天然抗氧化劑成分(如黃酮類、多酚類和黃烷醇類)，還被證實可降低心臟病(Heart disease)風險和促進大腦的健康。</p>
-            <div class="d-flex justify-content-end">
-              <router-link to="/know" class="p-3 text-Choco">看更多</router-link>
-            </div>
-          </div>
-          <div class="col-md-6 col-12 d-flex align-items-center p-4">
-            <img class="img-fluid rounded" src="../../assets/images/home-2.jpg" alt />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-5" data-aos="fade-up">
-      <h3 class="h1 mb-4 font-weight-bold text-center">店長推薦</h3>
-      <div class="row">
+    <section class="container py-5">
+      <h3 class="h1 mb-4 font-weight-bold text-center text-Choco" data-aos="fade-up">店長推薦</h3>
+      <div class="row" data-aos="fade-up">
         <div class="col-md-4 col-12 mb-3" v-for="item in pushProducts" :key="item.id">
           <a class="card cardList" @click.stop.prevent="createProduct(item.id)">
             <div
@@ -131,9 +39,47 @@
         </div>
       </div>
     </section>
+    <section class="container pb-5">
+      <h4 class="h1 pb-4 font-weight-bold text-center text-Choco" data-aos="fade-up">好吃的秘訣</h4>
+      <div class="row" data-aos="fade-up">
+        <div class="col-md-4 text-center">
+          <img class="mb-3" src="../../assets/images/handmade4.png" alt />
+          <h6 class="h5">手工製作</h6>
+          <p class="text-secondary">
+            官方認證手工產品
+            <br />每一個步驟都用愛心和細心
+            <br />不做機器大量生產
+            <br />每一顆巧克力都是用手小心呵護
+          </p>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <img class="mb-3" src="../../assets/images/cold-shipping.png" alt />
+          <h6 class="h5">冷藏運送</h6>
+          <p class="text-secondary">
+            從製造巧克力的溫控工作室
+            <br />比利時到台灣的低溫空運
+            <br />進而到台灣倉儲的15度C溫控倉儲
+            <br />全程幫您保鮮到家
+          </p>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <img class="mb-3" src="../../assets/images/Premium-quality1.png" alt />
+          <h6 class="h5">優良品質</h6>
+          <p class="text-secondary">
+            從可可樹到巧克力豆
+            <br />到烘培 發酵 研磨的製程
+            <br />親自監度製作
+            <br />符合最嚴格的章程
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="position-relative" data-aos="fade-up">
       <img
-        class="img-fluid"
+        class="img-fluid homeFooterImg"
         src="https://s3-ap-northeast-1.amazonaws.com/lacabosse.com.tw/wp-content/uploads/2018/11/about-full-img-2.jpg"
         alt
       />
