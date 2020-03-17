@@ -64,7 +64,7 @@
               </p>
               <h5 class="card-title font-weight-bold text-Choco">震驚！巧克力的起源已被改寫！</h5>
               <p class="card-text text-secondary">一直以來，學者都認為可可豆大約是在4000年前於中美洲馴化，但最新研究有了更有趣的發現。</p>
-              <p class="text-right">看更多</p>
+              <p class="text-right">點擊看更多</p>
             </div>
           </a>
         </div>

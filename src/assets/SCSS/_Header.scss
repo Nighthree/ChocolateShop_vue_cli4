@@ -46,6 +46,13 @@
 }
 .headerBtn.active {
   color: $ChocoNd;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid $ChocoNd;
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .scrolltop {

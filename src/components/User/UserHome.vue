@@ -7,7 +7,7 @@
       <div class="wrapSwiper position-relative mx-auto" data-aos="fade-up" data-aos-once="true">
         <div class="swiper-container productSwiper">
           <div class="swiper-wrapper">
-            <swiper :options="swiperOptionHome" ref="mySwiper">
+            <swiper :options="swiperOptionProducts" ref="mySwiper">
               <swiper-slide class="p-2" v-for="item in products" :key="item.id">
                 <router-link :to="{path: `/product/${item.id}`}" class="card cardList">
                   <div
@@ -51,8 +51,11 @@
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
       </div>
-      <div class="moreWrap d-flex justify-content-md-end justify-content-center align-items-center pt-2 mx-auto" data-aos="fade-up">
-        <span class="mr-1 h5 mb-0 text-Choco">更多精選巧克力 <i class="fas fa-angle-double-right"></i></span><router-link to="/products" class="btn btnMore">More</router-link>
+      <div
+        class="moreWrap d-flex justify-content-md-end justify-content-center align-items-center pt-2 mx-auto"
+        data-aos="fade-up"
+      >
+        <router-link to="/products" class="text-Choco h5">更多精選巧克力</router-link>
       </div>
     </section>
 
@@ -95,7 +98,6 @@
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
@@ -106,7 +108,7 @@ import Coupon from "@/components/User/Coupon.vue";
 export default {
   data() {
     return {
-      swiperOptionHome: {
+      swiperOptionProducts: {
         initialSlide: 0,
         direction: "horizontal",
         speed: 800,
@@ -157,11 +159,6 @@ export default {
     },
     addCartLoading() {
       return this.$store.state.status.addCartLoading;
-    },
-    pushProducts() {
-      return this.products.filter(function(item) {
-        return item.category === "精緻巧克力球";
-      });
     }
   },
   components: {

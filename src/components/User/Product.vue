@@ -99,14 +99,16 @@
           </router-link>
         </div>
       </div>
+
       <div
         data-aos="fade-up"
         data-aos-once="true"
+        class="wrapSwiper position-relative mx-auto"
         :class="{ judgeSwiper : filterProduct.length < 4 }"
       >
         <div class="swiper-container productSwiper">
           <div class="swiper-wrapper">
-            <swiper :options="swiperOption1" ref="mySwiper" v-if="products.length > 0">
+            <swiper :options="swiperOptionProducts" ref="mySwiper">
               <swiper-slide class="p-2" v-for="item in filterProduct" :key="item.id">
                 <router-link :to="{path: `/product/${item.id}`}" class="card cardList">
                   <div
@@ -119,9 +121,7 @@
                   </div>
                   <div class="card-body p-2 position-relative pb-4">
                     <p class="mb-2 badge badgeCategory">{{ item.category }}</p>
-                    <h6
-                      class="card-title font-weight-bold text-dark mb-1"
-                    >{{ item.title }}</h6>
+                    <h6 class="card-title font-weight-bold text-dark mb-1">{{ item.title }}</h6>
                     <div
                       class="h6 font-weight-bold text-danger"
                       v-if="!item.price"
@@ -145,9 +145,12 @@
             </swiper>
           </div>
         </div>
-        <div class="d-flex justify-content-center pt-3 productSwiper d-block d-lg-none">
-          <div class="swiper-pagination mx-1" slot="pagination"></div>
+
+        <div class="d-flex justify-content-center py-4">
+          <div class="swiper-pagination productsSwiperPagination" slot="pagination"></div>
         </div>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
       </div>
 
       <div class="d-flex justify-content-end pt-5">
@@ -167,13 +170,13 @@ export default {
       product: {},
       num: "1",
       knowBuy: false,
-      swiperOption1: {
+      swiperOptionProducts: {
         initialSlide: 0,
         direction: "horizontal",
         speed: 800,
         grabCursor: true,
         slidesPerView: 4,
-        spaceBetween: 30,
+        spaceBetween: 0,
         loop: true,
         autoplay: true,
         interval: 3500,
@@ -194,6 +197,10 @@ export default {
             slidesPerView: 3,
             centeredSlides: false
           }
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
         }
       }
     };
