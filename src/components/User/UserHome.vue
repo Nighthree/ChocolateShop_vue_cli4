@@ -1,44 +1,62 @@
 <template>
   <div>
+    <loading :active.sync="isLoading"></loading>
     <Banner></Banner>
     <section class="container py-5">
       <h3 class="h1 mb-4 font-weight-bold text-center text-Choco" data-aos="fade-up">店長推薦</h3>
-      <div class="row" data-aos="fade-up">
-        <div class="col-md-4 col-12 mb-3" v-for="item in pushProducts" :key="item.id">
-          <a class="card cardList" @click.stop.prevent="createProduct(item.id)">
-            <div
-              class="bg-cover cardImgHeight"
-              :style="{backgroundImage: `url(${ item.imageUrl })`}"
-            >
-              <div class="glass d-flex justify-content-center">
-                <span>點擊查看更多</span>
-              </div>
-            </div>
-            <div class="card-body p-3 position-relative pb-4">
-              <span class="mb-2 badge badgeCategory">{{ item.category }}</span>
-              <h5 class="card-title font-weight-bold mb-1">{{ item.title }}</h5>
-              <div
-                class="h6 font-weight-bold text-danger text-center"
-                v-if="!item.price"
-              >{{ item.origin_price | currency }} 元</div>
-              <div
-                class="h6 font-weight-bold text-danger"
-                v-if="item.price"
-              >{{ item.price | currency }} 元</div>
-              <a
-                href="#"
-                title="加入購物車"
-                class="btn btn-outline-danger addOneToCart p-2"
-                @click.stop.prevent="addCart(item.id)"
-              >
-                <i class="fas fa-spinner fa-spin fa-lg" v-if="addCartLoading === item.id"></i>
-                <i class="fas fa-cart-plus fa-lg" v-if="addCartLoading !== item.id"></i>
-              </a>
-            </div>
-          </a>
+      <div class="wrapSwiper position-relative mx-auto" data-aos="fade-up" data-aos-once="true">
+        <div class="swiper-container productSwiper">
+          <div class="swiper-wrapper">
+            <swiper :options="swiperOptionHome" ref="mySwiper">
+              <swiper-slide class="p-2" v-for="item in products" :key="item.id">
+                <router-link :to="{path: `/product/${item.id}`}" class="card cardList">
+                  <div
+                    class="bg-cover cardImgHeight"
+                    :style="{backgroundImage: `url(${ item.imageUrl })`}"
+                  >
+                    <div class="glass d-flex justify-content-center">
+                      <span>點擊查看更多</span>
+                    </div>
+                  </div>
+                  <div class="card-body p-2 position-relative pb-4">
+                    <p class="mb-2 badge badgeCategory">{{ item.category }}</p>
+                    <h6 class="card-title font-weight-bold text-dark mb-1">{{ item.title }}</h6>
+                    <div
+                      class="h6 font-weight-bold text-danger"
+                      v-if="!item.price"
+                    >{{ item.origin_price | currency }} 元</div>
+                    <div
+                      class="h6 font-weight-bold text-danger"
+                      v-if="item.price"
+                    >{{ item.price | currency }} 元</div>
+                    <a
+                      href="#"
+                      title="加入購物車"
+                      class="btn btn-outline-danger addOneToCart"
+                      @click.stop.prevent="addCart(item.id)"
+                    >
+                      <i class="fas fa-spinner fa-spin fa-lg" v-if="addCartLoading === item.id"></i>
+                      <i class="fas fa-cart-plus fa-lg" v-if="addCartLoading !== item.id"></i>
+                    </a>
+                  </div>
+                </router-link>
+              </swiper-slide>
+            </swiper>
+          </div>
         </div>
+
+        <div class="d-flex justify-content-center py-4">
+          <div class="swiper-pagination productsSwiperPagination" slot="pagination"></div>
+        </div>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </div>
+      <div class="moreWrap d-flex justify-content-md-end justify-content-center align-items-center pt-2 mx-auto" data-aos="fade-up">
+        <span class="mr-1 h5 mb-0 text-Choco">更多精選巧克力 <i class="fas fa-angle-double-right"></i></span><router-link to="/products" class="btn btnMore">More</router-link>
       </div>
     </section>
+
+    <Coupon data-aos="fade-up"></Coupon>
 
     <section class="container">
       <h4 class="h1 pb-4 font-weight-bold text-center text-Choco" data-aos="fade-up">好吃的秘訣</h4>
@@ -78,20 +96,6 @@
       </div>
     </section>
 
-    <Coupon data-aos="fade-up"></Coupon>
-
-    <section class="position-relative" data-aos="fade-up">
-      <img
-        class="img-fluid homeFooterImg"
-        src="https://s3-ap-northeast-1.amazonaws.com/lacabosse.com.tw/wp-content/uploads/2018/11/about-full-img-2.jpg"
-        alt
-      />
-      <router-link
-        to="/products"
-        class="btn btnToPro"
-        style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)"
-      >挑選更多精選巧克力</router-link>
-    </section>
   </div>
 </template>
 
@@ -100,6 +104,39 @@ import Banner from "@/components/User/Banner.vue";
 import Coupon from "@/components/User/Coupon.vue";
 
 export default {
+  data() {
+    return {
+      swiperOptionHome: {
+        initialSlide: 0,
+        direction: "horizontal",
+        speed: 800,
+        grabCursor: true,
+        slidesPerView: 4,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: true,
+        interval: 3500,
+        pagination: {
+          el: ".swiper-pagination.productsSwiperPagination",
+          clickable: true,
+          type: "bullets"
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1
+          },
+          992: {
+            slidesPerView: 2,
+            centeredSlides: false
+          }
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      }
+    };
+  },
   methods: {
     getProducts() {
       this.$store.dispatch("getProducts");

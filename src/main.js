@@ -12,6 +12,7 @@ import 'swiper/dist/css/swiper.css';
 import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-validate';
 import TW from 'vee-validate/dist/locale/zh_TW.json';
 import { email } from 'vee-validate/dist/rules';
+import './assets/SCSS/all.scss';
 
 import App from './App.vue';
 import router from './router';

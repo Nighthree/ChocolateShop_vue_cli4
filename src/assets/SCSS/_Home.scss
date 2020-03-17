@@ -1,0 +1,21 @@
+.btnMore {
+  display: block;
+  padding: 5px 10px;
+  background-color: $white;
+  color: $Choco;
+  font-weight: bold;
+  border: 1px solid $Choco;
+  transition: all 0.3s;
+  &:hover {
+    text-decoration: none;
+    border: 1px solid $ChocoNd;
+    color: $ChocoNd;
+  }
+  &:active {
+    background-color: $ChocoNd;
+    color: $white;
+  }
+}
+.moreWrap{
+  width: calc(100% - (27px + 20px + 3px) * 2);
+}

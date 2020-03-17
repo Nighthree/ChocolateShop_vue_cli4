@@ -18,3 +18,7 @@ JavaScript (ES6)、SASS/SCSS、Bootstrap 4、RWD、jQuery、CSS、HTML
 ## Plugins | 使用插件
 
 [vue-axios](https://www.npmjs.com/package/vue-axios)、[vue-loading-overlay](https://www.npmjs.com/package/vue-loading-overlay)、[vee-validate](https://logaretm.github.io/vee-validate/)、[vue-awesome-swiper](https://github.surmon.me/vue-awesome-swiper/)、[AOS](https://michalsnik.github.io/aos/)
+
+## 優化目標
+
+  - 商品 Swiper 模組化

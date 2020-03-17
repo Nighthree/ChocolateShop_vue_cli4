@@ -46,16 +46,16 @@
                     </div>
                   </div>
                   <div class="card-body p-2 position-relative pb-4">
-                    <p class="mb-2 badge badge-secondary">{{ item.category }}</p>
+                    <p class="mb-2 badge badgeCategory">{{ item.category }}</p>
                     <h5
-                      class="card-title font-weight-bold text-dark mb-1 text-center"
+                      class="card-title font-weight-bold text-dark mb-1"
                     >{{ item.title }}</h5>
                     <div
-                      class="h6 font-weight-bold text-danger text-center"
+                      class="h6 font-weight-bold text-danger"
                       v-if="!item.price"
                     >{{ item.origin_price | currency }} 元</div>
                     <div
-                      class="h6 font-weight-bold text-danger text-center"
+                      class="h6 font-weight-bold text-danger"
                       v-if="item.price"
                     >{{ item.price | currency }} 元</div>
                     <a

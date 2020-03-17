@@ -40,7 +40,9 @@
           </div>
         </router-link>
       </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-pagination bannerSwiperPagination" slot="pagination"></div>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
   </div>
 </template>
@@ -57,8 +59,12 @@ export default {
         autoplay: true,
         interval: 4000,
         pagination: {
-          el: ".swiper-pagination",
+          el: ".swiper-pagination.bannerSwiperPagination",
           clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
         }
       }
     };
