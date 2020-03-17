@@ -1,21 +1,51 @@
-.btnMore {
+.moreWrap {
+  width: calc(100% - (27px + 20px + 3px) * 2);
+}
+.button {
   display: block;
-  padding: 5px 10px;
+  position: relative;
   background-color: $white;
+  padding: 10px 37.5px 10px 10px;
   color: $Choco;
   font-weight: bold;
   border: 1px solid $Choco;
+  border-radius: 5px;
   transition: all 0.3s;
+  span {
+    position: relative;
+    .fa-arrow-right {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
   &:hover {
     text-decoration: none;
-    border: 1px solid $ChocoNd;
-    color: $ChocoNd;
+    color: $white;
+    background-color: $Choco;
+    .fa-arrow-right {
+      animation-name: arrowRight;
+      animation-duration: 1.8s;
+      animation-iteration-count: infinite;
+    }
   }
   &:active {
-    background-color: $ChocoNd;
-    color: $white;
+    background-color: $white;
+    color: $ChocoNd;
+    border: 1px solid $ChocoNd;
   }
 }
-.moreWrap{
-  width: calc(100% - (27px + 20px + 3px) * 2);
+
+@keyframes arrowRight {
+  0% {
+    left: 10px;
+  }
+  50% {
+    left: 20px;
+  }
+  100% {
+    left: 10px;
+  }
 }

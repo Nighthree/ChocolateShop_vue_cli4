@@ -47,9 +47,9 @@
                   </div>
                   <div class="card-body p-2 position-relative pb-4">
                     <p class="mb-2 badge badgeCategory">{{ item.category }}</p>
-                    <h5
-                      class="card-title font-weight-bold text-dark mb-1"
-                    >{{ item.title }}</h5>
+                    <h6
+                      class="card-title font-weight-bold mb-1"
+                    >{{ item.title }}</h6>
                     <div
                       class="h6 font-weight-bold text-danger"
                       v-if="!item.price"

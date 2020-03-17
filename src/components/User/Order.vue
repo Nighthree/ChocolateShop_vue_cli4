@@ -34,11 +34,11 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-10 col-12 pt-5">
-            <h2 class="text-Choco font-weight-bold h4 text-center pb-3 mb-0">
+            <h2 class="font-weight-bold h4 text-center pb-3 mb-0">
               <img src="../../assets/images/chocolate_icon.png" style="height:30px" />訂購資訊
             </h2>
             <div class="table-responsive">
-              <table class="table table-hover text-Choco">
+              <table class="table table-hover">
                 <thead>
                   <tr>
                     <th class="text-center d-none d-sm-table-cell"></th>
@@ -58,8 +58,8 @@
                     </td>
                     <td class="align-middle">
                       <a
-                        href="#"
                         class="text-Choco"
+                        href="#"
                         @click.prevent="createProduct(item.product.id)"
                         title="前往商品介紹"
                       >{{ item.product.title }}</a>
@@ -102,7 +102,7 @@
               </p>
             </div>
             <section>
-              <h2 class="text-Choco font-weight-bold h4 text-center pb-3 mb-0">
+              <h2 class="font-weight-bold h4 text-center pb-3 mb-0">
                 <img src="../../assets/images/chocolate_icon.png" style="height:30px" />優惠碼
               </h2>
               <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="couponCode" />
@@ -121,7 +121,7 @@
             </section>
           </div>
 
-          <div class="col-lg-8 col-md-10 col-12 text-Choco mb-5">
+          <div class="col-lg-8 col-md-10 col-12 mb-5">
             <h2 class="font-weight-bold h4 text-center py-3 mb-0">
               <img src="../../assets/images/chocolate_icon.png" style="height:30px" />填寫訂購資料
             </h2>
@@ -277,7 +277,10 @@ export default {
           vm.$http.spread(function(delResp, addResp) {
             vm.$store.dispatch("getCart");
             vm.$store.dispatch("pushLoadingStatu", false);
-            vm.$store.dispatch('updateMessage', { message: '購物車變更成功', status: 'success' });
+            vm.$store.dispatch("updateMessage", {
+              message: "購物車變更成功",
+              status: "success"
+            });
           })
         );
     },
@@ -288,7 +291,10 @@ export default {
         if (response.data.success) {
           vm.$router.push(`/checkout/${response.data.orderId}`);
         } else {
-          vm.$store.dispatch('updateMessage', { message: '訂單建立失敗', status: 'danger' });
+          vm.$store.dispatch("updateMessage", {
+            message: "訂單建立失敗",
+            status: "danger"
+          });
         }
         vm.getCart();
       });

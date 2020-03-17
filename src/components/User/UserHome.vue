@@ -3,7 +3,7 @@
     <loading :active.sync="isLoading"></loading>
     <Banner></Banner>
     <section class="container py-5">
-      <h3 class="h1 mb-4 font-weight-bold text-center text-Choco" data-aos="fade-up">店長推薦</h3>
+      <h3 class="h1 mb-4 font-weight-bold text-center" data-aos="fade-up">店長推薦</h3>
       <div class="wrapSwiper position-relative mx-auto" data-aos="fade-up" data-aos-once="true">
         <div class="swiper-container productSwiper">
           <div class="swiper-wrapper">
@@ -20,7 +20,7 @@
                   </div>
                   <div class="card-body p-2 position-relative pb-4">
                     <p class="mb-2 badge badgeCategory">{{ item.category }}</p>
-                    <h6 class="card-title font-weight-bold text-dark mb-1">{{ item.title }}</h6>
+                    <h6 class="card-title font-weight-bold mb-1">{{ item.title }}</h6>
                     <div
                       class="h6 font-weight-bold text-danger"
                       v-if="!item.price"
@@ -44,25 +44,23 @@
             </swiper>
           </div>
         </div>
-
-        <div class="d-flex justify-content-center py-4">
-          <div class="swiper-pagination productsSwiperPagination" slot="pagination"></div>
-        </div>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
+        <div class="swiper-pagination productsSwiperPagination d-none" slot="pagination"></div>
+        <div class="swiper-button-prev productSwiperButton" slot="button-prev"></div>
+        <div class="swiper-button-next productSwiperButton" slot="button-next"></div>
       </div>
-      <div
-        class="moreWrap d-flex justify-content-md-end justify-content-center align-items-center pt-2 mx-auto"
-        data-aos="fade-up"
-      >
-        <router-link to="/products" class="text-Choco h5">更多精選巧克力</router-link>
+
+      <div class="moreWrap pt-2 mx-auto" data-aos="fade-up">
+        <router-link to="/products" class="button mb-0 text-center">
+          更多精選巧克力
+          <span>
+            <i class="fas fa-arrow-right"></i>
+          </span>
+        </router-link>
       </div>
     </section>
 
-    <Coupon data-aos="fade-up"></Coupon>
-
     <section class="container">
-      <h4 class="h1 pb-4 font-weight-bold text-center text-Choco" data-aos="fade-up">好吃的秘訣</h4>
+      <h4 class="h1 pb-4 font-weight-bold text-center" data-aos="fade-up">好吃的秘訣</h4>
       <div class="row" data-aos="fade-up">
         <div class="col-md-4 text-center">
           <img class="mb-3" src="../../assets/images/handmade4.png" alt />
@@ -103,7 +101,6 @@
 
 <script>
 import Banner from "@/components/User/Banner.vue";
-import Coupon from "@/components/User/Coupon.vue";
 
 export default {
   data() {
@@ -133,8 +130,8 @@ export default {
           }
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
+          nextEl: ".swiper-button-next.productSwiperButton",
+          prevEl: ".swiper-button-prev.productSwiperButton"
         }
       }
     };
@@ -162,8 +159,7 @@ export default {
     }
   },
   components: {
-    Banner,
-    Coupon
+    Banner
   },
   created() {
     this.getProducts();

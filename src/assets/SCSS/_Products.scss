@@ -54,18 +54,24 @@
     span {
       color: transparent;
       transition: all 0.3s;
-      line-height: 250px;
+      line-height: 200px;
       font-size: 20px;
-      font-weight: bold;
     }
+  }
+  h6{
+    color: $dark;
+    transition: all 0.3s;
   }
   &:hover {
     text-decoration: none;
     .glass {
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(0, 0, 0, 0.6);
       span {
-        color: $Choco;
+        color: $white;
       }
+    }
+    h6 {
+      color: $Choco;
     }
   }
 }
