@@ -7,7 +7,7 @@
             to="/products"
             class="bannerLink bg-cover"
             title="立刻選購"
-            style="background-image: url(./../../../assets/images/banner_1.jpg)"
+            style="background-image: url(https://raw.githubusercontent.com/Nighthree/ChocolateShop_vue_cli4/master/src/assets/images/banner_1.jpg)"
           >
             <div class="bannerInfo">
               <h1 class="h5">Chocolate</h1>

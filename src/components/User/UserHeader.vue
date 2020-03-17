@@ -90,15 +90,17 @@ export default {
     scroll() {
       const vm = this;
       const routeName = vm.$route.name;
-      if (routeName !== "Home" && vm.logoSize && vm.scroll !== 0) {
+      if (routeName !== "Home" && vm.scroll !== 0) {
         vm.logoSize = false;
       } else if (routeName === "Home" && vm.scroll === 0) {
         vm.logoSize = true;
+      } else if (routeName === "Home" && vm.scroll !== 0) {
+        vm.logoSize = false;
       }
     },
     $route(newUrl, oldUrl) {
       const vm = this;
-      if (newUrl.name === "Home" && vm.scroll === 0) {
+      if (newUrl.name === "Home") {
         vm.logoSize = true;
       } else {
         vm.logoSize = false;
