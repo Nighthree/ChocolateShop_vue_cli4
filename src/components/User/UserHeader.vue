@@ -89,12 +89,20 @@ export default {
   watch: {
     scroll() {
       const vm = this;
-      if (vm.logoSize && vm.scroll !== 0) {
+      const routeName = vm.$route.name;
+      if (routeName !== "Home" && vm.logoSize && vm.scroll !== 0) {
         vm.logoSize = false;
-      } else if (vm.scroll === 0) {
+      } else if (routeName === "Home" && vm.scroll === 0) {
         vm.logoSize = true;
       }
-      console.log("logoSize", vm.logoSize);
+    },
+    $route(newUrl, oldUrl) {
+      const vm = this;
+      if (newUrl.name === "Home" && vm.scroll === 0) {
+        vm.logoSize = true;
+      } else {
+        vm.logoSize = false;
+      }
     }
   },
   mounted() {

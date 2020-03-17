@@ -7,7 +7,7 @@
             to="/products"
             class="bannerLink bg-cover"
             title="立刻選購"
-            style="background-image: url(https://shoplineimg.com/58fef51759d524172c0003a4/5b7d25a1abcc37000e6b8024/2200x.webp?source_format=jpg)"
+            style="background-image: url(./../../../assets/images/banner_1.jpg)"
           >
             <div class="bannerInfo">
               <h1 class="h5">Chocolate</h1>
