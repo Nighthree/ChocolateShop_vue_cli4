@@ -127,7 +127,7 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch("getSearchText", "All");
+    // this.$store.dispatch("getSearchText", "All");
     this.getProducts();
   }
 };

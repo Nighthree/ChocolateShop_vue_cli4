@@ -1,6 +1,6 @@
 <template>
   <div>
-    <footer class="d-flex py-4 bg-Choco flex-column">
+    <footer class="d-flex py-4 bg-Choco flex-column" data-aos="fade-up">
       <ul class="list-group list-group-horizontal justify-content-center">
         <li class="list-group-item border-0 h4 bg-Choco">
           <a href="#" class="text-white">

@@ -2,7 +2,7 @@
   <div>
     <section class="minHeight">
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-aos="fade-up">
           <div
             class="col-md-10 col-12 position-relative d-flex flex-column justify-content-center align-items-center my-5"
           >

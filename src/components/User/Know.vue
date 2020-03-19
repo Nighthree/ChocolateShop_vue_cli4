@@ -3,7 +3,7 @@
     <section class="container py-5 textStyle">
       <h1 class="text-center font-weight-bold pb-4">吃巧克力的好處</h1>
       <div class="row py-4" data-aos="fade-up">
-        <div class="col-md-6 col-12">
+        <div class="col-md-6 col-12 d-flex flex-column justify-content-center">
           <h3 class="chocoline mb-4">提升認知能力</h3>
           <p
             class="text-secondary"
@@ -14,19 +14,19 @@
         </div>
       </div>
       <div class="row flex-row flex-md-row-reverse py-4" data-aos="fade-up">
-        <div class="col-md-6 col-12">
+        <div class="col-md-6 col-12 d-flex flex-column justify-content-center">
           <h3 class="chocoline mb-4">降低心臟病風險</h3>
           <p
             class="text-secondary"
           >黑巧克力裡的黃烷醇，可降低血栓和中風(Stroke)的風險。某項針對470名年長男性的研究中，發現可可在15年內，降低受試者們平均50%心臟病死亡風險。另有研究表示，每週吃2次或更多次黑巧克力，可降低冠狀動脈鈣化32%的風險，吃超過5次，可降低57％罹患心臟病的風險。</p>
         </div>
-        <div class="col-md-6 col-12 d-flex align-items-center p-4">
+        <div class="col-md-6 col-12  d-flex flex-column justify-content-center d-flex align-items-center p-4">
           <img class="img-fluid rounded" src="../../assets/images/know-3.jpg" alt />
         </div>
       </div>
 
       <div class="row py-4" data-aos="fade-up">
-        <div class="col-md-6 col-12">
+        <div class="col-md-6 col-12 d-flex flex-column justify-content-center">
           <h3 class="chocoline mb-4">降血壓改善血液流動</h3>
           <p
             class="text-secondary"
@@ -38,7 +38,7 @@
       </div>
 
       <div class="row flex-row flex-md-row-reverse py-4" data-aos="fade-up">
-        <div class="col-md-6 col-12">
+        <div class="col-md-6 col-12 d-flex flex-column justify-content-center">
           <h3 class="chocoline mb-4">提升好的膽固醇</h3>
           <p
             class="text-secondary"

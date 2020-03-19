@@ -1,4 +1,4 @@
-# 巧克力電商 ChocolateShop [Demo](https://nighthree.github.io/ChocolateShop_vue_cli4/#/home)  
+# 巧克力電商 ChocolateShop [Demo](https://nighthree.github.io/ChocolateShop_vue_cli4/)  
 
 > 這是一份以 Vue.js 為框架的前端練習作品，無任何商業用途
 

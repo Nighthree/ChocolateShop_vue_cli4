@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading :active.sync="isLoading"></loading>
     <form class="form-signin" @submit.prevent="singin">
       <h1 class="h3 mb-3 font-weight-normal">登入後台</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
@@ -46,10 +47,17 @@ export default {
     singin() {
       const api = `${process.env.VUE_APP_API_PATH}/admin/signin`;
       const vm = this;
+      vm.$store.dispatch("pushLoadingStatu", true);
       vm.$http.post(api, vm.user).then(response => {
         if (response.data.success) {
+          vm.$store.dispatch("pushLoadingStatu", false);
           vm.$router.push("/backstage/productlist");
+          vm.$store.dispatch("updateMessage", {
+            message: "後台登入成功",
+            status: "success"
+          });
         } else {
+          vm.$store.dispatch("pushLoadingStatu", false);
           vm.$router.push("/");
           alert(response.data.message);
         }

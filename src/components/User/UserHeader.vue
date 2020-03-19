@@ -1,8 +1,8 @@
 <template>
-  <div class="sticky-top nav-border bg-white">
+  <div class="sticky-top nav-border bg-white" :class="{ 'logoBig' : logoSize }">
     <div class="container">
       <nav class="navbar navbar-expand-md navbar-white bg-white px-0">
-        <router-link to="/home" class="logo" :class="{ 'logoBig' : logoSize }">
+        <router-link to="/" class="logo" >
           最愛巧克力
           <span class="sr-only">(current)</span>
         </router-link>
@@ -18,7 +18,7 @@
           <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav">
             <li class="nav-item">
               <router-link to="/news" class="nav-link headerBtn text-center">
                 最新消息

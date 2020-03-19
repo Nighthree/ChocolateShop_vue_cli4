@@ -2,6 +2,7 @@
   <div>
     <Navbar></Navbar>
     <Alert></Alert>
+    <loading :active.sync="isLoading"></loading>
     <div class="container-fluid">
       <div class="row">
         <Aside></Aside>

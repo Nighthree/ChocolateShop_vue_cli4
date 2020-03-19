@@ -23,8 +23,10 @@ export default {
     signOut() {
       const api = `${process.env.VUE_APP_API_PATH}/logout`;
       const vm = this;
+      vm.$store.dispatch("pushLoadingStatu", true);
       vm.$http.post(api).then(response => {
         if (response.data.success) {
+          vm.$store.dispatch("pushLoadingStatu", false);
           vm.$router.push("/login");
           alert("成功登出後台");
         }

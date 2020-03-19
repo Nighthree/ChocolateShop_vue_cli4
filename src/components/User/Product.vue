@@ -51,8 +51,11 @@
     </div>
 
     <div class="container pb-5">
-      <div class="d-flex border-bottom mb-3">
+      <div class="d-flex justify-content-between border-bottom mb-3">
         <h6 class="text-Choco similarPro mb-0">同系列商品</h6>
+        <router-link to="/products" class="toProducts font-weight-bold">
+          <i class="fas fa-arrow-left"></i> 回到商品列表
+        </router-link>
       </div>
       <!-- 處理商品量不足時 swpier 複製商品的情況，因為沒必要複製 -->
       <div
@@ -151,12 +154,6 @@
         </div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-      </div>
-
-      <div class="d-flex justify-content-end pt-5">
-        <router-link to="/products" class="toProducts font-weight-bold">
-          <i class="fas fa-arrow-left"></i> 回到商品列表
-        </router-link>
       </div>
     </div>
   </div>

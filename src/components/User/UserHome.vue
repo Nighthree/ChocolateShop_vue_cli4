@@ -2,8 +2,19 @@
   <div>
     <loading :active.sync="isLoading"></loading>
     <Banner></Banner>
-    <section class="container py-5">
-      <h3 class="h1 mb-4 font-weight-bold text-center" data-aos="fade-up">店長推薦</h3>
+    <section class="container my-5">
+      <div
+        class="moreWrap mx-auto d-flex flex-column flex-md-row align-items-center justify-content-md-between"
+        data-aos="fade-up"
+      >
+        <h3 class="h1 mb-4 font-weight-bold">店長推薦</h3>
+        <router-link to="/products" class="button mb-0 text-center d-none d-md-block">
+          更多精選巧克力
+          <span>
+            <i class="fas fa-arrow-right"></i>
+          </span>
+        </router-link>
+      </div>
       <div class="wrapSwiper position-relative mx-auto" data-aos="fade-up" data-aos-once="true">
         <div class="swiper-container productSwiper">
           <div class="swiper-wrapper">
@@ -49,18 +60,28 @@
         <div class="swiper-button-next productSwiperButton" slot="button-next"></div>
       </div>
 
-      <div class="moreWrap pt-2 mx-auto" data-aos="fade-up">
-        <router-link to="/products" class="button mb-0 text-center">
-          更多精選巧克力
+      <router-link to="/products" class="button mb-0 text-center mt-3 d-block d-md-none">
+        更多精選巧克力
+        <span>
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </router-link>
+    </section>
+
+    <section class="container mb-4">
+      <div
+        class="moreWrap mb-4 mx-auto d-flex flex-column flex-md-row align-items-center justify-content-md-between"
+        data-aos="fade-up"
+      >
+        <h3 class="h1 font-weight-bold">好吃的秘訣</h3>
+        <router-link to="/about" class="button mb-0 text-center d-none d-md-block">
+          我們的堅持
           <span>
             <i class="fas fa-arrow-right"></i>
           </span>
         </router-link>
       </div>
-    </section>
 
-    <section class="container">
-      <h4 class="h1 pb-4 font-weight-bold text-center" data-aos="fade-up">好吃的秘訣</h4>
       <div class="row" data-aos="fade-up">
         <div class="col-md-4 text-center">
           <img class="mb-3" src="../../assets/images/handmade4.png" alt />
@@ -95,6 +116,12 @@
           </p>
         </div>
       </div>
+      <router-link to="/about" class="button mb-0 text-center mb-4 d-block d-md-none">
+        我們的堅持
+        <span>
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </router-link>
     </section>
   </div>
 </template>

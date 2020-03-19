@@ -4,7 +4,7 @@
   left: 0;
   transition: all 0.3s;
   a {
-    box-shadow: 2px 2px 5px $secondary;
+    box-shadow: 1px 1px 2px $Choco;
     border: 1px solid $Choco;
     color: $Choco;
     font-weight: 900;
@@ -41,7 +41,7 @@
   }
 }
 .cardList {
-  box-shadow: 2px 2px 5px $secondary;
+  box-shadow: 1px 1px 2px $Choco;
   border-radius: 10px;
   border: none;
   position: relative;
