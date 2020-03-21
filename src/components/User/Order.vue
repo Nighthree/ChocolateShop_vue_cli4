@@ -107,7 +107,15 @@
               </h2>
               <div class="form-row">
                 <div class="col-sm-8 col-12 mb-3">
-                  <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="couponCode" />
+                  <ValidationProvider name="優惠碼" rules="digits:3" v-slot="{ errors }">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="請輸入優惠碼"
+                      v-model="couponCode"
+                    />
+                    <span class="text-danger">{{ errors[0] }}</span>
+                  </ValidationProvider>
                 </div>
                 <div class="col-sm-4 col-12 mb-3">
                   <a class="btn checkCoupon d-block" @click.prevent="checkCouponCode">使用優惠碼</a>
@@ -256,12 +264,23 @@ export default {
     checkCouponCode() {
       const vm = this;
       const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/coupon`;
+      vm.$store.dispatch("pushLoadingStatu", true);
       vm.$http.post(api, { data: { code: vm.couponCode } }).then(response => {
         if (response.data.success) {
-          vm.couponCode = vm.cart.carts.coupon;
+          vm.$store.dispatch("pushLoadingStatu", false);
+          vm.couponCode = "";
+          vm.$store.dispatch("updateMessage", {
+            message: "優惠碼套用成功",
+            status: "success"
+          });
           vm.getCart();
         } else {
-          vm.getCart();
+          vm.$store.dispatch("updateMessage", {
+            message: response.data.message,
+            status: "danger"
+          });
+          vm.couponCode = "";
+          vm.$store.dispatch("pushLoadingStatu", false);
         }
       });
     },
@@ -281,7 +300,7 @@ export default {
         ])
         .then(
           vm.$http.spread(function(delResp, addResp) {
-            vm.$store.dispatch("getCart");
+            vm.getCart();
             vm.$store.dispatch("pushLoadingStatu", false);
             vm.$store.dispatch("updateMessage", {
               message: "購物車變更成功",
@@ -290,20 +309,45 @@ export default {
           })
         );
     },
+    reCheckCoupon() {
+      const vm = this;
+      const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/coupon`;
+      vm.$http.post(api, { data: { code: "888" } }).then(response => {
+        if (response.data.success) {
+          vm.couponCode = vm.cart.carts.coupon;
+          vm.getCart();
+        } else {
+          vm.getCart();
+        }
+      });
+    },
     createCustomOrder() {
       const vm = this;
       const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/order`;
-      vm.$http.post(api, { data: vm.form }).then(response => {
-        if (response.data.success) {
-          vm.$router.push(`/checkout/${response.data.orderId}`);
-        } else {
-          vm.$store.dispatch("updateMessage", {
-            message: "訂單建立失敗",
-            status: "danger"
-          });
-        }
-        vm.getCart();
-      });
+      const formInfo = vm.form.user;
+      if (
+        formInfo.name === "" ||
+        formInfo.email === "" ||
+        formInfo.tel === "" ||
+        formInfo.address === ""
+      ) {
+        vm.$store.dispatch("updateMessage", {
+          message: "訂購資料必填欄位為空",
+          status: "danger"
+        });
+      } else {
+        vm.$http.post(api, { data: vm.form }).then(response => {
+          if (response.data.success) {
+            vm.$router.push(`/checkout/${response.data.orderId}`);
+          } else {
+            vm.$store.dispatch("updateMessage", {
+              message: "訂單建立失敗",
+              status: "danger"
+            });
+          }
+          vm.getCart();
+        });
+      }
     },
     createProduct(id) {
       this.$router.push(`/product/${id}`);

@@ -233,7 +233,7 @@ export default {
         return item.category === vm.product.category;
       });
       const filterProTitle = [];
-      filterPro.forEach(function(item) {
+      filterPro.forEach(item => {
         filterProTitle.push(item.title);
       });
       const key = filterProTitle.indexOf(vm.product.title);

@@ -11,7 +11,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
 import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-validate';
 import TW from 'vee-validate/dist/locale/zh_TW.json';
-import { email } from 'vee-validate/dist/rules';
+import { email, digits } from 'vee-validate/dist/rules';
 import './assets/SCSS/all.scss';
 
 import App from './App.vue';
@@ -33,6 +33,7 @@ localize('zh_TW', TW);
 axios.defaults.withCredentials = true;
 
 extend('email', email);
+extend('digits', digits);
 
 extend('min', {
   validate(value, args) {

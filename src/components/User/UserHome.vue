@@ -76,7 +76,9 @@
           class="moreWrap mb-4 mx-auto d-flex flex-column flex-md-row align-items-center justify-content-md-between"
           data-aos="fade-up"
         >
-          <h3 class="h3 homeTitle font-weight-bold d-flex flex-column flex-md-row text-center mt-4 mt-md-0">
+          <h3
+            class="h3 homeTitle font-weight-bold d-flex flex-column flex-md-row text-center mt-4 mt-md-0"
+          >
             好吃的秘訣
             <span class="d-flex align-items-center justify-content-center">Tasty</span>
           </h3>
