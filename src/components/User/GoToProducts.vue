@@ -6,11 +6,31 @@
         src="https://s3-ap-northeast-1.amazonaws.com/lacabosse.com.tw/wp-content/uploads/2018/11/about-full-img-2.jpg"
         alt
       />
-      <router-link
-        to="/products"
+      <a
         class="btn btnToPro"
         style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)"
-      >立即選購</router-link>
+        data-aos="fade-up"
+        @click.prevent="getSearchText('All')"
+      >立即選購</a>
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    getSearchText(item) {
+      const vm = this;
+      vm.$store.dispatch("getSearchText", item);
+      if (vm.searchTextItem === item) {
+        vm.$router.push("/products");
+      }
+    }
+  },
+  computed: {
+    searchTextItem() {
+      return this.$store.state.status.searchTextItem;
+    }
+  }
+};
+</script>

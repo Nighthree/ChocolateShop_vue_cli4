@@ -55,6 +55,6 @@ export default {
   max-width: 50%;
   top: 80px;
   right: 20px;
-  z-index: 100;
+  z-index: 2000;
 }
 </style>

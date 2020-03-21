@@ -105,8 +105,14 @@
               <h2 class="font-weight-bold h4 text-center pb-3 mb-0">
                 <img src="../../assets/images/chocolate_icon.png" style="height:30px" />優惠碼
               </h2>
-              <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="couponCode" />
-              <a class="btn checkCoupon my-3 d-block" @click.prevent="checkCouponCode">使用優惠碼</a>
+              <div class="form-row">
+                <div class="col-sm-8 col-12 mb-3">
+                  <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="couponCode" />
+                </div>
+                <div class="col-sm-4 col-12 mb-3">
+                  <a class="btn checkCoupon d-block" @click.prevent="checkCouponCode">使用優惠碼</a>
+                </div>
+              </div>
               <router-link
                 to="/coupon"
                 class="d-block toProducts rounded mb-3 text-center"

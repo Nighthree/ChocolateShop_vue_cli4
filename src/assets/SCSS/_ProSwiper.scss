@@ -15,14 +15,42 @@
   }
 }
 .wrapSwiper .productSwiper {
-  width: calc(100% - (27px + 20px) * 2);
+  width: calc(100% - (40px + 15px) * 2);
+  @media (max-width: 767.98px) {
+    width: calc(100% - (30px + 5px) * 2);
+  }
 }
 
-.wrapSwiper{
-  .swiper-button-next{
-    background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23833603'%2F%3E%3C%2Fsvg%3E");
+.productSwiperButton.fa-chevron-circle-left,
+.productSwiperButton.fa-chevron-circle-right {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  color: $Choco;
+  font-size: 40px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+  @media (max-width: 767.98px) {
+    font-size: 30px;
   }
-  .swiper-button-prev{
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23833603'%2F%3E%3C%2Fsvg%3E");
+  &:hover{
+    color: $ChocoNd;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+.productSwiperButton.fa-chevron-circle-left {
+  left: 10px;
+  @media (max-width: 767.98px) {
+    left: 3px;
+  }
+}
+.productSwiperButton.fa-chevron-circle-right {
+  right: 10px;
+  @media (max-width: 767.98px) {
+    right: 3px;
   }
 }

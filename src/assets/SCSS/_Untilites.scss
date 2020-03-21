@@ -54,23 +54,23 @@ body {
   }
 }
 
-.btnToPro {
+.btn.btnToPro {
   display: block;
   width: 224px;
   padding: 10px 0;
-  background-color: $ChocoRd;
+  background-color: $white;
   color: $Choco;
   font-weight: bold;
   transition: all 0.3s;
-  border: 2px solid $ChocoRd;
+  border: 2px solid $white;
   &:hover {
     text-decoration: none;
     background-color: $Choco;
-    color: $ChocoRd;
-    border: 2px solid $ChocoRd;
+    color: $white;
+    border: 2px solid $white;
   }
   &:active {
-    background-color: $ChocoRd;
+    background-color: $white;
     color: $Choco;
     border: 2px solid $Choco;
   }

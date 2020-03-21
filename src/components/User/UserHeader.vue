@@ -2,7 +2,7 @@
   <div class="sticky-top nav-border bg-white" :class="{ 'logoBig' : logoSize }">
     <div class="container">
       <nav class="navbar navbar-expand-md navbar-white bg-white px-0">
-        <router-link to="/" class="logo" >
+        <router-link to="/" class="logo">
           最愛巧克力
           <span class="sr-only">(current)</span>
         </router-link>
@@ -32,10 +32,14 @@
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/products" class="nav-link headerBtn text-center">
+              <a
+                class="nav-link headerBtn text-center"
+                @click.prevent="getSearchText('All')"
+                :class="{ 'active' : active }"
+              >
                 商品列表
                 <span class="sr-only">(current)</span>
-              </router-link>
+              </a>
             </li>
             <li class="nav-item">
               <router-link to="/know" class="nav-link headerBtn text-center">
@@ -68,7 +72,8 @@ export default {
   data() {
     return {
       scroll: 0,
-      logoSize: false
+      logoSize: false,
+      active: false
     };
   },
   methods: {
@@ -84,6 +89,18 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
+    },
+    getSearchText(item) {
+      const vm = this;
+      vm.$store.dispatch("getSearchText", item);
+      if (vm.searchTextItem === item) {
+        vm.$router.push("/products");
+      }
+    }
+  },
+  computed: {
+    searchTextItem() {
+      return this.$store.state.status.searchTextItem;
     }
   },
   watch: {
@@ -104,6 +121,11 @@ export default {
         vm.logoSize = true;
       } else {
         vm.logoSize = false;
+      }
+      if (newUrl.name === "Products" || newUrl.name === "Product") {
+        vm.active = true;
+      } else {
+        vm.active = false;
       }
     }
   },

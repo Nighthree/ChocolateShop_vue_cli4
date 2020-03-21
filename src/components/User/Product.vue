@@ -152,8 +152,8 @@
         <div class="d-flex justify-content-center py-4">
           <div class="swiper-pagination productsSwiperPagination" slot="pagination"></div>
         </div>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
+        <div class="productSwiperButton fas fa-chevron-circle-left" slot="button-prev"></div>
+        <div class="productSwiperButton fas fa-chevron-circle-right" slot="button-next"></div>
       </div>
     </div>
   </div>
@@ -196,8 +196,8 @@ export default {
           }
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
+          nextEl: ".productSwiperButton.fa-chevron-circle-left",
+          prevEl: ".productSwiperButton.fa-chevron-circle-right"
         }
       }
     };

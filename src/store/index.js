@@ -11,7 +11,7 @@ export default new Vuex.Store({
     status: {
       isLoading: false,
       categories: [],
-      searchTextItem: '',
+      searchTextItem: 'All',
       addCartLoading: ''
     },
     cart: {
