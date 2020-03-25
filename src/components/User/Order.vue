@@ -300,7 +300,7 @@ export default {
           vm.$http.post(addAPI, { data: changeCart })
         ])
         .then(
-          vm.$http.spread(function(delResp, addResp) {
+          vm.$http.spread((delResp, addResp) => {
             vm.getCart();
             vm.$store.dispatch("pushLoadingStatu", false);
             vm.$store.dispatch("updateMessage", {

@@ -161,8 +161,8 @@ export default {
       });
     },
     payOrder() {
-      this.$store.dispatch("pushLoadingStatu", true);
       const vm = this;
+      vm.$store.dispatch("pushLoadingStatu", true);
       const api = `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/pay/${vm.orderId}`;
       vm.$http.post(api).then(response => {
         if (response.data.success) {
@@ -172,7 +172,7 @@ export default {
           alert(response.data.message);
           vm.getOrder();
         }
-        this.$store.dispatch("pushLoadingStatu", false);
+        vm.$store.dispatch("pushLoadingStatu", false);
       });
     },
     paySuccess() {
