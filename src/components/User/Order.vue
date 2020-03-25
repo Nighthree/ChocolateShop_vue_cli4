@@ -155,7 +155,7 @@
                       name="email"
                       placeholder="請輸入 Email"
                       v-model="form.user.email"
-                      :class="{'is-invalid': errors[0] }"
+                      :class="{'is-invalid': errors[0] || isInvalidStyle }"
                     />
                     <span class="text-danger">{{ errors[0] }}</span>
                   </ValidationProvider>
@@ -174,7 +174,7 @@
                       name="name"
                       placeholder="請輸入姓名"
                       v-model="form.user.name"
-                      :class="{'is-invalid': errors[0] }"
+                      :class="{'is-invalid': errors[0] || isInvalidStyle }"
                     />
                     <span class="text-danger">{{ errors[0] }}</span>
                   </ValidationProvider>
@@ -193,7 +193,7 @@
                       name="telphone"
                       placeholder="請輸入電話"
                       v-model="form.user.tel"
-                      :class="{'is-invalid': errors[0]}"
+                      :class="{'is-invalid': errors[0] || isInvalidStyle }"
                     />
                     <span class="text-danger">{{ errors[0] }}</span>
                   </ValidationProvider>
@@ -212,7 +212,7 @@
                       name="address"
                       placeholder="請輸入地址"
                       v-model="form.user.address"
-                      :class="{'is-invalid': errors[0]}"
+                      :class="{'is-invalid': errors[0] || isInvalidStyle }"
                     />
                     <span class="text-danger">{{ errors[0] }}</span>
                   </ValidationProvider>
@@ -244,6 +244,7 @@ export default {
   data() {
     return {
       couponCode: "",
+      isInvalidStyle: false,
       form: {
         user: {
           name: "",
@@ -332,11 +333,13 @@ export default {
         formInfo.tel === "" ||
         formInfo.address === ""
       ) {
+        vm.isInvalidStyle = true;
         vm.$store.dispatch("updateMessage", {
           message: "訂購資料必填欄位為空",
           status: "danger"
         });
       } else {
+        vm.isInvalidStyle = false;
         vm.$http.post(api, { data: vm.form }).then(response => {
           if (response.data.success) {
             vm.$router.push(`/checkout/${response.data.orderId}`);

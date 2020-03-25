@@ -60,6 +60,10 @@ export default {
           vm.$store.dispatch("pushLoadingStatu", false);
           vm.$router.push("/");
           alert(response.data.message);
+          vm.$store.dispatch("updateMessage", {
+            message: response.data.message,
+            status: "danger"
+          });
         }
       });
     }

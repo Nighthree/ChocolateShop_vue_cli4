@@ -28,7 +28,10 @@ export default {
         if (response.data.success) {
           vm.$store.dispatch("pushLoadingStatu", false);
           vm.$router.push("/login");
-          alert("成功登出後台");
+          vm.$store.dispatch("updateMessage", {
+            message: "成功登出後台",
+            status: "success"
+          });
         }
       });
     }

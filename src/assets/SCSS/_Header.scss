@@ -29,7 +29,7 @@
 }
 
 .nav-border {
-  box-shadow: 1px 1px 5px $secondary;
+  box-shadow: 1px 1px 5px #d0d2d3;
 }
 
 .dropdown-toggle::after {
@@ -83,7 +83,6 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  box-shadow: 1px 1px 5px $secondary;
   background-color: $white;
   color: $dark;
   &:hover {

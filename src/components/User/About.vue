@@ -39,7 +39,7 @@
       <div class="container pt-5">
         <div class="row justify-content-between">
           <div class="col-md-4 col-12 d-flex mb-4 text-secondary">
-            <div class="ml-md-auto mr-md-0 ml-auto mr-auto">
+            <div class="mr-md-auto ml-md-0 mr-auto ml-auto">
               <h5 class="chocoline pb-4">我們的任務</h5>
               <p class="pl-3">
                 在這個巧克力大國裡
@@ -61,7 +61,7 @@
             </div>
           </div>
           <div class="col-md-4 col-12 d-flex mb-4 text-secondary">
-            <div class="mr-md-auto ml-md-0 mr-auto ml-auto">
+            <div class="ml-md-auto mr-md-0 ml-auto mr-auto">
               <h5 class="chocoline pb-4">我們的用心</h5>
               <p class="pl-3">
                 最好的巧克力工匠
