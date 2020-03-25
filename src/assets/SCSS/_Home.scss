@@ -3,23 +3,21 @@
 }
 .button {
   display: block;
-  position: relative;
-  background-color: $white;
-  padding: 10px 37.5px 10px 10px;
+  position: absolute;
   color: $Choco;
   font-weight: bold;
-  border: 1px solid $Choco;
-  border-radius: 5px;
+  border-bottom: 1.3px solid $Choco;
   transition: all 0.3s;
-  @media (max-width: 767.98px) { 
+  @media (max-width: 767.98px) {
     width: 85%;
     margin: 0 auto;
+    position: static;
   }
   span {
     position: relative;
     .fa-arrow-right {
       position: absolute;
-      left: 10px;
+      left: 5px;
       top: 50%;
       transform: translateY(-50%);
     }
@@ -27,30 +25,34 @@
 
   &:hover {
     text-decoration: none;
-    color: $white;
-    background-color: $Choco;
+    border-bottom: 1.3px solid $ChocoNd;
+    color: $ChocoNd;
     .fa-arrow-right {
       animation-name: arrowRight;
       animation-duration: 1.8s;
       animation-iteration-count: infinite;
     }
   }
-  &:active {
-    background-color: $white;
-    color: $ChocoNd;
-    border: 1px solid $ChocoNd;
-  }
+}
+
+.btnMore {
+  top: 55px;
+  left: 350px;
+}
+.btnAbout {
+  top: 55px;
+  left: 310px;
 }
 
 @keyframes arrowRight {
   0% {
-    left: 10px;
+    left: 5px;
   }
   50% {
-    left: 20px;
+    left: 15px;
   }
   100% {
-    left: 10px;
+    left: 5px;
   }
 }
 

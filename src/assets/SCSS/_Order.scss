@@ -88,18 +88,3 @@
     color: $ChocoRd;
   }
 }
-
-.btn.btn-pay{
-  border: 1px solid $danger;
-  color: $ChocoRd;
-  background-color: $danger;
-  transition: all 0.3s;
-  &:hover{
-    border: 1px solid $ChocoNd;
-    color: $ChocoNd;
-  }
-  &:active{
-    background-color: $ChocoNd;
-    color: $Choco;
-  }
-}

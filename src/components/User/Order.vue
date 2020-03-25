@@ -229,7 +229,7 @@
                     placeholder="有什麼話想告訴我們？"
                   ></textarea>
                 </div>
-                <button type="submit" class="btn btnChoco px-4 w-100" :disabled="invalid">建立訂單</button>
+                <button type="submit" class="btn checkCoupon font-weight-bold col-12 col-md-6" :disabled="invalid">建立訂單</button>
               </form>
             </ValidationObserver>
           </div>

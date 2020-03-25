@@ -61,22 +61,21 @@
         <div class="productSwiperButton fas fa-chevron-circle-left" slot="button-prev"></div>
         <div class="productSwiperButton fas fa-chevron-circle-right" slot="button-next"></div>
       </div>
-      <div class="moreWrap mx-auto d-flex justify-content-center justify-content-md-end">
-        <router-link
-          to="/products"
-          class="button mb-0 text-center"
-          data-aos="fade-up"
-          @click.prevent.native="getSearchText('All')"
-        >
-          更多精選巧克力
-          <span>
-            <i class="fas fa-arrow-right"></i>
-          </span>
-        </router-link>
-      </div>
+
+      <router-link
+        to="/products"
+        class="button btnMore mb-0 text-center"
+        data-aos="fade-up"
+        @click.prevent.native="getSearchText('All')"
+      >
+        更多精選巧克力
+        <span>
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </router-link>
     </section>
 
-    <section class="container pb-4 bg-white position-relative">
+    <section class="container pt-5 pb-4 bg-white position-relative">
       <div
         class="moreWrap mb-4 mx-auto d-flex flex-column flex-md-row align-items-center justify-content-md-between"
         data-aos="fade-up"
@@ -123,14 +122,13 @@
           </p>
         </div>
       </div>
-      <div class="moreWrap mx-auto d-flex justify-content-center justify-content-md-end">
-        <router-link to="/about" class="button mb-0 text-center" data-aos="fade-up">
-          我們的堅持
-          <span>
-            <i class="fas fa-arrow-right"></i>
-          </span>
-        </router-link>
-      </div>
+
+      <router-link to="/about" class="button btnAbout mb-0 text-center" data-aos="fade-up">
+        我們的堅持
+        <span>
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </router-link>
     </section>
   </div>
 </template>
