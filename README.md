@@ -1,9 +1,7 @@
 # 巧克力電商 ChocolateShop [Demo](https://nighthree.github.io/ChocolateShop_vue_cli4/)  
 
 > 這是一份以 Vue.js 為框架的前端練習作品，無任何商業用途
-
 > A Vue.js project
-
 > Only used in Portfolio
 
 從[此 GitHub](https://github.com/Nighthree/ChocolateShop) 移植，
@@ -21,4 +19,6 @@ JavaScript (ES6)、SASS/SCSS、Bootstrap 4、RWD、jQuery、CSS、HTML
 
 ## 優化目標
 
-  - 商品 Swiper 模組化
+  - 優化後台畫面
+  - Vuex 資料模組化
+  - 商品列表使用 Swiper 的部分模組化

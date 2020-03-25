@@ -54,27 +54,6 @@
   }
 }
 
-.homeBgbgImg {
-  background-image: url(https://cw1.tw/CW/images/article/C1435022220675.jpg);
-  background-position: center center;
-  background-size: cover;
-  filter: blur(10px);
-  position: absolute;
-  top: -20px;
-  left: 0;
-  bottom: -10px;
-  right: 0;
-  z-index: -20;
-}
-.homeBg {
-  position: absolute;
-  background-color: rgba($color: $white, $alpha: 0.8);
-  top: -50px;
-  left: 0;
-  bottom: -30px;
-  right: 0;
-  z-index: -19;
-}
 .homeTitle {
   span {
     font-size: 18px;

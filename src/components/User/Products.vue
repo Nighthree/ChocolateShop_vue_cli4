@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-md-3 col-lg-2">
             <ul class="ulStyle">
-              <li class="text-center productList" :class="{ 'active': searchText === 'All'}">
+              <li class="text-center productList" :class="{ 'active': searchTextItem === 'All'}">
                 <a
                   href="#"
                   class="d-block text-decoration-none py-2 rounded"
@@ -17,7 +17,7 @@
                 class="text-center productList"
                 v-for="item in categories"
                 :key="item"
-                :class="{ 'active': searchText === item }"
+                :class="{ 'active': searchTextItem === item }"
               >
                 <a
                   href="#"
@@ -78,17 +78,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-      searchText: "All"
-    };
-  },
   methods: {
     getProducts() {
       this.$store.dispatch("getProducts");
     },
     getSearchText(item) {
-      this.searchText = item;
       this.$store.dispatch("getSearchText", item);
     },
     addCart(id, qty = 1) {

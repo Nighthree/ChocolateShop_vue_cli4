@@ -129,6 +129,7 @@
                 to="/products"
                 class="toProducts mb-3 d-block text-center"
                 title="前往商品頁面"
+                @click.prevent.native="getSearchText('All')"
               >
                 <i class="fas fa-arrow-left"></i> 繼續選購商品
               </router-link>
@@ -351,6 +352,10 @@ export default {
     },
     createProduct(id) {
       this.$router.push(`/product/${id}`);
+    },
+    getSearchText(item) {
+      const vm = this;
+      vm.$store.dispatch("getSearchText", item);
     }
   },
   computed: {

@@ -53,7 +53,12 @@
     <div class="container pb-5">
       <div class="d-flex justify-content-between border-bottom mb-3">
         <h6 class="text-Choco similarPro mb-0">同系列商品</h6>
-        <router-link to="/products" class="toProducts font-weight-bold">
+
+        <router-link
+          to="/products"
+          class="toProducts font-weight-bold"
+          @click.prevent.native="getSearchText('All')"
+        >
           <i class="fas fa-arrow-left"></i> 回到商品列表
         </router-link>
       </div>
@@ -215,6 +220,10 @@ export default {
     },
     addCart(id, qty = 1) {
       this.$store.dispatch("addCart", { id, qty });
+    },
+    getSearchText(item) {
+      const vm = this;
+      vm.$store.dispatch("getSearchText", item);
     }
   },
   computed: {

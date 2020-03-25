@@ -32,14 +32,14 @@
               </router-link>
             </li>
             <li class="nav-item">
-              <a
+              <router-link
+                to="/products"
                 class="nav-link headerBtn text-center"
-                @click.prevent="getSearchText('All')"
-                :class="{ 'active' : active }"
+                @click.prevent.native="getSearchText('All')"
               >
                 商品列表
                 <span class="sr-only">(current)</span>
-              </a>
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/know" class="nav-link headerBtn text-center">
@@ -93,9 +93,6 @@ export default {
     getSearchText(item) {
       const vm = this;
       vm.$store.dispatch("getSearchText", item);
-      if (vm.searchTextItem === item) {
-        vm.$router.push("/products");
-      }
     }
   },
   computed: {

@@ -29,12 +29,13 @@ export default {
       if (vm.$route.name === "Order" || vm.$route.name === "Checkout") {
         vm.cartHidden = true;
         vm.goToProHidden = true;
-      } else {
-        vm.cartHidden = false;
-      }
-      if (vm.$route.name === "Products" || vm.$route.name === "Product") {
+      } else if (
+        vm.$route.name === "Products" ||
+        vm.$route.name === "Product"
+      ) {
         vm.goToProHidden = true;
       } else {
+        vm.cartHidden = false;
         vm.goToProHidden = false;
       }
     }
@@ -42,15 +43,14 @@ export default {
   watch: {
     $route(newUrl, oldUrl) {
       const vm = this;
-      if (vm.$route.name === "Order" || vm.$route.name === "Checkout") {
+      if (newUrl.name === "Order" || newUrl.name === "Checkout") {
         vm.cartHidden = true;
         vm.goToProHidden = true;
+      } else if (newUrl.name === "Products" || newUrl.name === "Product") {
+        vm.goToProHidden = true;
+        vm.cartHidden = false;
       } else {
         vm.cartHidden = false;
-      }
-      if (vm.$route.name === "Products" || vm.$route.name === "Product") {
-        vm.goToProHidden = true;
-      } else {
         vm.goToProHidden = false;
       }
     }

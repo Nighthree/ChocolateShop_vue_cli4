@@ -93,6 +93,7 @@
               <router-link
                 to="/products"
                 class="toProducts font-weight-bold text-center mb-3 d-block"
+                @click.prevent.native="getSearchText('All')"
                 v-else
               >
                 <i class="fas fa-arrow-left"></i> 繼續選購商品
@@ -178,8 +179,14 @@ export default {
       $("#paySuccess").modal("show");
     },
     goToProducts() {
+      const vm = this;
       $("#paySuccess").modal("hide");
-      this.$router.push("/products");
+      vm.getSearchText('All');
+      vm.$router.push("/products");
+    },
+    getSearchText(item) {
+      const vm = this;
+      vm.$store.dispatch("getSearchText", item);
     }
   },
   computed: {

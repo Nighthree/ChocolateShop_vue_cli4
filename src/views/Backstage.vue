@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import Navbar from '../components/Backstage/Navbar';
-import Aside from '../components/Backstage/Aside';
-import Alert from '../components/Alert';
+import Navbar from '@/components/Backstage/Navbar';
+import Aside from '@/components/Backstage/Aside';
+import Alert from '@/components/Alert';
 
 export default {
   components: {
