@@ -11,81 +11,81 @@ const routes = [
   {
     path: '/',
     name: '',
-    component: () => import('../views/User.vue'),
+    component: () => import('@/views/User.vue'),
     children: [
       {
         path: '',
         name: 'Home',
-        component: () => import('../components/User/UserHome.vue')
+        component: () => import('@/components/User/UserHome.vue')
       },
       {
         path: 'news',
         name: 'News',
-        component: () => import('../components/User/News.vue')
+        component: () => import('@/components/User/News.vue')
       },
       {
         path: 'about',
         name: 'About',
-        component: () => import('../components/User/About.vue')
+        component: () => import('@/components/User/About.vue')
       },
       {
         path: 'products',
         name: 'Products',
-        component: () => import('../components/User/Products.vue')
+        component: () => import('@/components/User/Products.vue')
       },
       {
         path: '/product/:productId',
         name: 'Product',
-        component: () => import('../components/User/Product.vue')
+        component: () => import('@/components/User/Product.vue')
       },
       {
         path: 'know',
         name: 'Know',
-        component: () => import('../components/User/Know.vue')
+        component: () => import('@/components/User/Know.vue')
       },
       {
         path: 'coupon',
         name: 'Coupon',
-        component: () => import('../components/User/Coupon.vue')
+        component: () => import('@/components/User/Coupon.vue')
       },
       {
         path: 'order',
         name: 'Order',
-        component: () => import('../components/User/Order.vue')
+        component: () => import('@/components/User/Order.vue')
       },
       {
         path: 'checkout/:orderId',
         name: 'Checkout',
-        component: () => import('../components/User/Checkout.vue')
+        component: () => import('@/components/User/Checkout.vue')
       }
     ]
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue')
+    component: () => import('@/views/Login.vue')
   },
   {
     path: '/backstage',
     name: 'Backstage',
-    component: () => import('../views/Backstage.vue'),
+    component: () => import('@/views/Backstage.vue'),
     children: [
       {
         path: 'productlist',
         name: 'ProductList',
-        component: () => import('../components/Backstage/ProductList.vue'),
+        component: () => import('@/components/Backstage/ProductList.vue'),
         meta: { requiresAuth: true }
       },
       {
         path: 'orderlist',
         name: 'OrderList',
-        component: () => import('../components/Backstage/OrderList.vue'),
+        component: () => import('@/components/Backstage/OrderList.vue'),
         meta: { requiresAuth: true }
       },
       {
         path: 'couponlist',
         name: 'CouponList',
-        component: () => import('../components/Backstage/CouponList.vue'),
+        component: () => import('@/components/Backstage/CouponList.vue'),
         meta: { requiresAuth: true }
       }
     ]
