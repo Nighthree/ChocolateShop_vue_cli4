@@ -7,7 +7,7 @@
         data-target="#cartModal"
       >
         <i class="fas fa-shopping-cart fa-2x"></i>
-        <span class="badge badge-pill badge-danger">{{ cart.carts.length }}</span>
+        <span class="badge badge-pill badge-danger" v-if="cart.carts.length !== 0">{{ cart.carts.length }}</span>
       </a>
     </div>
     <!-- Cart Modal -->
@@ -87,6 +87,7 @@ export default {
       const vm = this;
       $("#cartModal").modal("hide");
       if (vm.cart.carts.length === 0) {
+        vm.$store.dispatch("getSearchText", 'All');
         vm.$router.push("/products");
       } else {
         vm.$router.push("/order");
