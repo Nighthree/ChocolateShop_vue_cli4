@@ -8,7 +8,7 @@
           </a>
         </li>
         <li class="list-group-item border-0 h4 bg-Choco">
-          <a href="https://github.com/Nighthree/ChocolateShop" class="text-white">
+          <a href="https://github.com/Nighthree/ChocolateShop_vue_cli4" class="text-white">
             <i class="fab fa-github-square"></i>
           </a>
         </li>
